@@ -1,0 +1,15 @@
+docker compose up -d --build
+
+docker exec -it wordpress bash
+cd /var/www/html
+php -d memory_limit=512M /usr/local/bin/wp core download --allow-root ( cho phép tài force tràn bộ nhớ )
+wp core download --allow-root
+
+flow của template là URL request -> WP Query -> Block template system -> template-canvas.php( core) -> template/*.html(theme)->part/*.html
+
+vào sql: docker exec -it mysql mysql -u wpuser -p
+wppassword
+
+SHOW DATABASES;
+USE wordpress;
+SHOW TABLES;
