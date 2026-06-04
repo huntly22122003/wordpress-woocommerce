@@ -1,0 +1,6 @@
+[04-Jun-2026 13:44:47 UTC] WP MAIL ERROR: Array
+(
+    [0] => Could not instantiate mail function.
+)
+
+[04-Jun-2026 13:44:47 UTC] OTP MAIL FAILED
