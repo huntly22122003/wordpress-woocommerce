@@ -17,7 +17,7 @@ add_action('plugins_loaded', function () {
         $phpmailer->SMTPSecure = 'tls';
 
         $phpmailer->Username = 'sasukeholy@gmail.com';
-        $phpmailer->Password = 'stbutlhdnwqtvoqn';
+        $phpmailer->Password = PASSKEY;
 
         $phpmailer->setFrom('sasukeholy@gmail.com', 'Simple OTP');
 

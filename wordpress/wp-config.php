@@ -90,7 +90,7 @@ define('WP_DEBUG_LOG', true);
 define('WP_DEBUG_DISPLAY', true);
 
 /* Add any custom values between this line and the "stop editing" line. */
-
+$env = parse_ini_file(__DIR__ . '/.env');
 
 
 /* That's all, stop editing! Happy publishing. */
@@ -99,6 +99,7 @@ define('SA_DB_NAME', 'auth_db');
 define('SA_DB_USER', 'root');
 define('SA_DB_PASS', 'rootpassword');
 define('FS_METHOD', 'direct');
+define('PASSKEY', $env['PASSKEY']);
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {

@@ -363,3 +363,91 @@ Stack trace:
 
 )
 
+[05-Jun-2026 02:29:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-config.php:102) in /var/www/html/wp-includes/pluggable.php on line 1535
+[05-Jun-2026 02:29:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-config.php:102) in /var/www/html/wp-includes/pluggable.php on line 1538
+[05-Jun-2026 02:31:15 UTC] === MAIL DEBUG START ===
+[05-Jun-2026 02:31:15 UTC] Class: WPMailSMTP\MailCatcherV6
+[05-Jun-2026 02:31:15 UTC] Mailer: mail
+[05-Jun-2026 02:31:15 UTC] Host: localhost
+[05-Jun-2026 02:31:15 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
+            [line] => 38
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
+            [line] => 72
+            [function] => sa_send_otp_email
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => sa_send_register_otp
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-admin/admin-ajax.php
+            [line] => 192
+            [function] => do_action
+        )
+
+)
+
