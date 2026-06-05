@@ -102,8 +102,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+$env = parse_ini_file(__DIR__ . '/.env');
 
+
+/* That's all, stop editing! Happy publishing. */
 define('SA_DB_HOST', 'mysql');
 define('SA_DB_NAME', 'auth_db');
 define('SA_DB_USER', 'root');
 define('SA_DB_PASS', 'rootpassword');
+define('FS_METHOD', 'direct');
+define('PASSKEY', $env['PASSKEY']);

@@ -19,7 +19,7 @@ add_action('phpmailer_init', function ($phpmailer) {
     $phpmailer->SMTPSecure = 'tls';
 
     $phpmailer->Username = 'sasukeholy@gmail.com';
-    $phpmailer->Password = 'YOUR_APP_PASSWORD';
+    $phpmailer->Password = PASSKEY;
 
     $phpmailer->setFrom(
         'sasukeholy@gmail.com',
