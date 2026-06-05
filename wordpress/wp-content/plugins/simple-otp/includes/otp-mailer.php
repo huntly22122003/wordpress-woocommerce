@@ -3,8 +3,6 @@
 if (!defined('ABSPATH')) {
     exit;
 }
-require_once plugin_dir_path(__FILE__)
-    . 'Models/OtpModel.php';
 function sa_send_otp_email($email)
 {
     $email = sanitize_email(
@@ -68,4 +66,16 @@ add_action('wp_mail_failed', function ($error) {
             true
         )
     );
+});
+
+require_once plugin_dir_path(__FILE__)
+    . 'Models/OtpModel.php';
+    add_action('phpmailer_init', function ($phpmailer) {
+
+    error_log('=== MAIL DEBUG START ===');
+    error_log('Class: ' . get_class($phpmailer));
+    error_log('Mailer: ' . $phpmailer->Mailer);
+    error_log('Host: ' . $phpmailer->Host);
+
+    error_log(print_r(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS), true));
 });

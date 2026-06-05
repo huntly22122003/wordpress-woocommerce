@@ -9,7 +9,8 @@ require_once plugin_dir_path(__FILE__)
     . '../../simple-otp/includes/otp-generator.php';
 require_once plugin_dir_path(__FILE__)
     . '../../simple-otp/includes/otp-mailer.php';
-
+require_once plugin_dir_path(__FILE__)
+    . '../../simple-otp/includes/otp-verify.php';
 /*
 |--------------------------------------------------------------------------
 | AJAX SEND OTP
