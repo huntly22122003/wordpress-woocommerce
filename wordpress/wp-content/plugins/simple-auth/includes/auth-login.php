@@ -34,6 +34,14 @@ function sa_handle_login()
     error_log('User found ID: ' . $user['id']);
 
     if (!password_verify($password, $user['password'])) {
+            error_log('INPUT PASSWORD: ' . $password);
+    error_log('HASH IN DB: ' . $user['password']);
+    error_log(
+        password_verify($password, $user['password'])
+            ? 'PASSWORD OK'
+            : 'PASSWORD FAIL'
+    );
+        error_log(var_export(password_verify('123', $user['password']), true));
         error_log('LOGIN FAILED: Wrong password');
         return 'Wrong password';
     }
@@ -44,7 +52,7 @@ function sa_handle_login()
 
     $_SESSION['sa_user'] = [
         'id' => $user['id'],
-        'username' => $user['full_name'],
+        'username' => $user['username'],
         'email' => $user['email']
     ];
 
@@ -54,7 +62,6 @@ function sa_handle_login()
     echo '<script>';
     echo 'console.log(' . json_encode($_SESSION['sa_user']) . ')';
     echo '</script>';
-
     //wp_redirect(home_url());
     //exit;
 }

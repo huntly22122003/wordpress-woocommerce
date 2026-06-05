@@ -22,11 +22,10 @@ class UserModel
     */
 
     public function create(
-        $full_name,
+        $username,
         $gender,
         $age,
         $email,
-        $phone,
         $password
     ) {
 
@@ -37,22 +36,20 @@ class UserModel
 
         $stmt = $this->db->prepare("
             INSERT INTO users (
-                full_name,
+                username,
                 gender,
                 age,
                 email,
-                phone,
                 password
             )
-            VALUES (?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?)
         ");
 
         return $stmt->execute([
-            $full_name,
+            $username,
             $gender,
             $age,
             $email,
-            $phone,
             $hash
         ]);
     }

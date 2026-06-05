@@ -1,8 +1,16 @@
-[05-Jun-2026 00:48:11 UTC] === MAIL DEBUG START ===
-[05-Jun-2026 00:48:11 UTC] Class: WPMailSMTP\MailCatcherV6
-[05-Jun-2026 00:48:11 UTC] Mailer: mail
-[05-Jun-2026 00:48:11 UTC] Host: localhost
-[05-Jun-2026 00:48:11 UTC] Array
+[05-Jun-2026 08:46:10 UTC] === LOGIN REQUEST ===
+[05-Jun-2026 08:46:10 UTC] Email: huntly1306@gmail.com
+[05-Jun-2026 08:46:10 UTC] User found ID: 2
+[05-Jun-2026 08:46:11 UTC] INPUT PASSWORD: 123
+[05-Jun-2026 08:46:11 UTC] HASH IN DB: $2y$10$RrkjwXmNLApslw8Z55kQH.3zuNzWL7.5RrvzWs1M9z9yV5Fvd2yQy
+[05-Jun-2026 08:46:11 UTC] PASSWORD FAIL
+[05-Jun-2026 08:46:11 UTC] false
+[05-Jun-2026 08:46:11 UTC] LOGIN FAILED: Wrong password
+[05-Jun-2026 09:02:08 UTC] === MAIL DEBUG START ===
+[05-Jun-2026 09:02:08 UTC] Class: WPMailSMTP\MailCatcherV6
+[05-Jun-2026 09:02:08 UTC] Mailer: mail
+[05-Jun-2026 09:02:08 UTC] Host: localhost
+[05-Jun-2026 09:02:08 UTC] Array
 (
     [0] => Array
         (
@@ -46,7 +54,7 @@
     [5] => Array
         (
             [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 71
+            [line] => 43
             [function] => sa_send_otp_email
         )
 
@@ -54,7 +62,7 @@
         (
             [file] => /var/www/html/wp-includes/class-wp-hook.php
             [line] => 341
-            [function] => sa_send_register_otp
+            [function] => sa_handle_register
         )
 
     [7] => Array
@@ -77,486 +85,69 @@
 
     [9] => Array
         (
-            [file] => /var/www/html/wp-admin/admin-ajax.php
-            [line] => 192
+            [file] => /var/www/html/wp-settings.php
+            [line] => 771
             [function] => do_action
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-config.php
+            [line] => 110
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-settings.php
+                )
+
+            [function] => require_once
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-load.php
+            [line] => 50
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-config.php
+                )
+
+            [function] => require_once
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 13
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-load.php
+                )
+
+            [function] => require_once
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
         )
 
 )
 
-[05-Jun-2026 00:48:13 UTC] WP MAIL ERROR: Array
+[05-Jun-2026 09:10:38 UTC] === LOGIN REQUEST ===
+[05-Jun-2026 09:10:38 UTC] Email: huntly1306@gmail.com
+[05-Jun-2026 09:10:38 UTC] User found ID: 4
+[05-Jun-2026 09:10:38 UTC] LOGIN SUCCESS
+[05-Jun-2026 09:10:38 UTC] Array
 (
-    [0] => SMTP Error: Could not authenticate.
-)
-
-[05-Jun-2026 00:48:13 UTC] OTP MAIL FAILED
-[05-Jun-2026 00:53:39 UTC] === MAIL DEBUG START ===
-[05-Jun-2026 00:53:39 UTC] Class: WPMailSMTP\MailCatcherV6
-[05-Jun-2026 00:53:39 UTC] Mailer: mail
-[05-Jun-2026 00:53:39 UTC] Host: localhost
-[05-Jun-2026 00:53:39 UTC] Array
-(
-    [0] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => {closure}
-        )
-
-    [1] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [2] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 570
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [3] => Array
-        (
-            [file] => /var/www/html/wp-includes/pluggable.php
-            [line] => 622
-            [function] => do_action_ref_array
-        )
-
-    [4] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
-            [function] => wp_mail
-        )
-
-    [5] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 71
-            [function] => sa_send_otp_email
-        )
-
-    [6] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => sa_send_register_otp
-        )
-
-    [7] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [8] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 522
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [9] => Array
-        (
-            [file] => /var/www/html/wp-admin/admin-ajax.php
-            [line] => 192
-            [function] => do_action
-        )
-
-)
-
-[05-Jun-2026 00:54:31 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "SA_DB_HOST" in /var/www/html/wp-content/plugins/simple-auth/DB/AuthDB.php:13
-Stack trace:
-#0 /var/www/html/wp-content/plugins/simple-auth/includes/Models/UserModel.php(15): AuthDB::conn()
-#1 /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php(133): UserModel->__construct()
-#2 /var/www/html/wp-includes/class-wp-hook.php(341): sa_handle_register('')
-#3 /var/www/html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
-#4 /var/www/html/wp-includes/plugin.php(522): WP_Hook->do_action(Array)
-#5 /var/www/html/wp-settings.php(771): do_action('init')
-#6 /var/www/html/wp-config.php(104): require_once('/var/www/html/w...')
-#7 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
-#8 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...')
-#9 /var/www/html/index.php(17): require('/var/www/html/w...')
-#10 {main}
-  thrown in /var/www/html/wp-content/plugins/simple-auth/DB/AuthDB.php on line 13
-[05-Jun-2026 00:54:31 UTC] WooCommerce: FTP filesystem connection failed. Please check your FTP credentials. Retrying in 2 minutes.
-[05-Jun-2026 00:59:44 UTC] === MAIL DEBUG START ===
-[05-Jun-2026 00:59:44 UTC] Class: WPMailSMTP\MailCatcherV6
-[05-Jun-2026 00:59:44 UTC] Mailer: mail
-[05-Jun-2026 00:59:44 UTC] Host: localhost
-[05-Jun-2026 00:59:44 UTC] Array
-(
-    [0] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => {closure}
-        )
-
-    [1] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [2] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 570
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [3] => Array
-        (
-            [file] => /var/www/html/wp-includes/pluggable.php
-            [line] => 622
-            [function] => do_action_ref_array
-        )
-
-    [4] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
-            [function] => wp_mail
-        )
-
-    [5] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 71
-            [function] => sa_send_otp_email
-        )
-
-    [6] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => sa_send_register_otp
-        )
-
-    [7] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [8] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 522
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [9] => Array
-        (
-            [file] => /var/www/html/wp-admin/admin-ajax.php
-            [line] => 192
-            [function] => do_action
-        )
-
-)
-
-[05-Jun-2026 01:13:58 UTC] === MAIL DEBUG START ===
-[05-Jun-2026 01:13:58 UTC] Class: WPMailSMTP\MailCatcherV6
-[05-Jun-2026 01:13:58 UTC] Mailer: mail
-[05-Jun-2026 01:13:58 UTC] Host: localhost
-[05-Jun-2026 01:13:58 UTC] Array
-(
-    [0] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => {closure}
-        )
-
-    [1] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [2] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 570
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [3] => Array
-        (
-            [file] => /var/www/html/wp-includes/pluggable.php
-            [line] => 622
-            [function] => do_action_ref_array
-        )
-
-    [4] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
-            [function] => wp_mail
-        )
-
-    [5] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 72
-            [function] => sa_send_otp_email
-        )
-
-    [6] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => sa_send_register_otp
-        )
-
-    [7] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [8] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 522
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [9] => Array
-        (
-            [file] => /var/www/html/wp-admin/admin-ajax.php
-            [line] => 192
-            [function] => do_action
-        )
-
-)
-
-[05-Jun-2026 02:29:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-config.php:102) in /var/www/html/wp-includes/pluggable.php on line 1535
-[05-Jun-2026 02:29:54 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-config.php:102) in /var/www/html/wp-includes/pluggable.php on line 1538
-[05-Jun-2026 02:31:15 UTC] === MAIL DEBUG START ===
-[05-Jun-2026 02:31:15 UTC] Class: WPMailSMTP\MailCatcherV6
-[05-Jun-2026 02:31:15 UTC] Mailer: mail
-[05-Jun-2026 02:31:15 UTC] Host: localhost
-[05-Jun-2026 02:31:15 UTC] Array
-(
-    [0] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => {closure}
-        )
-
-    [1] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [2] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 570
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [3] => Array
-        (
-            [file] => /var/www/html/wp-includes/pluggable.php
-            [line] => 622
-            [function] => do_action_ref_array
-        )
-
-    [4] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
-            [function] => wp_mail
-        )
-
-    [5] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 72
-            [function] => sa_send_otp_email
-        )
-
-    [6] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => sa_send_register_otp
-        )
-
-    [7] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [8] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 522
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [9] => Array
-        (
-            [file] => /var/www/html/wp-admin/admin-ajax.php
-            [line] => 192
-            [function] => do_action
-        )
-
-)
-
-[05-Jun-2026 02:46:19 UTC] === MAIL DEBUG START ===
-[05-Jun-2026 02:46:19 UTC] Class: WPMailSMTP\MailCatcherV6
-[05-Jun-2026 02:46:19 UTC] Mailer: mail
-[05-Jun-2026 02:46:19 UTC] Host: localhost
-[05-Jun-2026 02:46:19 UTC] Array
-(
-    [0] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => {closure}
-        )
-
-    [1] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [2] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 570
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [3] => Array
-        (
-            [file] => /var/www/html/wp-includes/pluggable.php
-            [line] => 622
-            [function] => do_action_ref_array
-        )
-
-    [4] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
-            [function] => wp_mail
-        )
-
-    [5] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 72
-            [function] => sa_send_otp_email
-        )
-
-    [6] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => sa_send_register_otp
-        )
-
-    [7] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [8] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 522
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [9] => Array
-        (
-            [file] => /var/www/html/wp-admin/admin-ajax.php
-            [line] => 192
-            [function] => do_action
-        )
-
-)
-
-[05-Jun-2026 02:55:09 UTC] === LOGIN REQUEST ===
-[05-Jun-2026 02:55:09 UTC] Email: huntly1306@gmail.com
-[05-Jun-2026 02:55:09 UTC] User found ID: 2
-[05-Jun-2026 02:55:09 UTC] PHP Warning:  Undefined array key "username" in /var/www/html/wp-content/plugins/simple-auth/includes/auth-login.php on line 47
-[05-Jun-2026 02:55:09 UTC] LOGIN SUCCESS
-[05-Jun-2026 02:55:09 UTC] Array
-(
-    [id] => 2
-    [username] => 
-    [email] => huntly1306@gmail.com
-)
-
-[05-Jun-2026 02:57:37 UTC] === LOGIN REQUEST ===
-[05-Jun-2026 02:57:37 UTC] Email: huntly1306@gmail.com
-[05-Jun-2026 02:57:37 UTC] User found ID: 2
-[05-Jun-2026 02:57:37 UTC] LOGIN SUCCESS
-[05-Jun-2026 02:57:37 UTC] Array
-(
-    [id] => 2
-    [username] => 1231
+    [id] => 4
+    [username] => huntly1306@gmail.com
     [email] => huntly1306@gmail.com
 )
 
