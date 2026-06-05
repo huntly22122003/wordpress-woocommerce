@@ -130,6 +130,15 @@ function sa_handle_register()
             $_POST['otp'] ?? ''
         );
 
+    if (!$password) {
+        wp_die('Mật khẩu không được để trống');
+    }
+
+    $hashedPassword = password_hash(
+        $password,
+        PASSWORD_BCRYPT
+    );
+
     $userModel =
         new UserModel();
 

@@ -44,7 +44,7 @@ function sa_handle_login()
 
     $_SESSION['sa_user'] = [
         'id' => $user['id'],
-        'username' => $user['username'],
+        'username' => $user['full_name'],
         'email' => $user['email']
     ];
 
