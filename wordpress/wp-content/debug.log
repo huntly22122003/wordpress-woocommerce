@@ -1,16 +1,10 @@
-[05-Jun-2026 08:46:10 UTC] === LOGIN REQUEST ===
-[05-Jun-2026 08:46:10 UTC] Email: huntly1306@gmail.com
-[05-Jun-2026 08:46:10 UTC] User found ID: 2
-[05-Jun-2026 08:46:11 UTC] INPUT PASSWORD: 123
-[05-Jun-2026 08:46:11 UTC] HASH IN DB: $2y$10$RrkjwXmNLApslw8Z55kQH.3zuNzWL7.5RrvzWs1M9z9yV5Fvd2yQy
-[05-Jun-2026 08:46:11 UTC] PASSWORD FAIL
-[05-Jun-2026 08:46:11 UTC] false
-[05-Jun-2026 08:46:11 UTC] LOGIN FAILED: Wrong password
-[05-Jun-2026 09:02:08 UTC] === MAIL DEBUG START ===
-[05-Jun-2026 09:02:08 UTC] Class: WPMailSMTP\MailCatcherV6
-[05-Jun-2026 09:02:08 UTC] Mailer: mail
-[05-Jun-2026 09:02:08 UTC] Host: localhost
-[05-Jun-2026 09:02:08 UTC] Array
+[07-Jun-2026 14:40:28 UTC] PHP Warning:  include(/var/www/html/wp-content/plugins/simple-auth/views/forgot.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 63
+[07-Jun-2026 14:40:28 UTC] PHP Warning:  include(): Failed opening '/var/www/html/wp-content/plugins/simple-auth/views/forgot.php' for inclusion (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 63
+[07-Jun-2026 14:41:06 UTC] === MAIL DEBUG START ===
+[07-Jun-2026 14:41:06 UTC] Class: WPMailSMTP\MailCatcherV6
+[07-Jun-2026 14:41:06 UTC] Mailer: mail
+[07-Jun-2026 14:41:06 UTC] Host: localhost
+[07-Jun-2026 14:41:06 UTC] Array
 (
     [0] => Array
         (
@@ -53,8 +47,8 @@
 
     [5] => Array
         (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 43
+            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-forgot.php
+            [line] => 30
             [function] => sa_send_otp_email
         )
 
@@ -62,7 +56,7 @@
         (
             [file] => /var/www/html/wp-includes/class-wp-hook.php
             [line] => 341
-            [function] => sa_handle_register
+            [function] => sa_handle_forgot_password
         )
 
     [7] => Array
@@ -140,11 +134,156 @@
 
 )
 
-[05-Jun-2026 09:10:38 UTC] === LOGIN REQUEST ===
-[05-Jun-2026 09:10:38 UTC] Email: huntly1306@gmail.com
-[05-Jun-2026 09:10:38 UTC] User found ID: 4
-[05-Jun-2026 09:10:38 UTC] LOGIN SUCCESS
-[05-Jun-2026 09:10:38 UTC] Array
+[07-Jun-2026 14:41:48 UTC] === LOGIN REQUEST ===
+[07-Jun-2026 14:41:48 UTC] Email: huntly1306@gmail.com
+[07-Jun-2026 14:41:48 UTC] User found ID: 4
+[07-Jun-2026 14:41:48 UTC] LOGIN SUCCESS
+[07-Jun-2026 14:41:48 UTC] Array
+(
+    [id] => 4
+    [username] => huntly1306@gmail.com
+    [email] => huntly1306@gmail.com
+)
+
+[07-Jun-2026 14:48:07 UTC] === MAIL DEBUG START ===
+[07-Jun-2026 14:48:07 UTC] Class: WPMailSMTP\MailCatcherV6
+[07-Jun-2026 14:48:07 UTC] Mailer: mail
+[07-Jun-2026 14:48:07 UTC] Host: localhost
+[07-Jun-2026 14:48:07 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
+            [line] => 38
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-forgot.php
+            [line] => 30
+            [function] => sa_send_otp_email
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => sa_handle_forgot_password
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-settings.php
+            [line] => 771
+            [function] => do_action
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-config.php
+            [line] => 110
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-settings.php
+                )
+
+            [function] => require_once
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-load.php
+            [line] => 50
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-config.php
+                )
+
+            [function] => require_once
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 13
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-load.php
+                )
+
+            [function] => require_once
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
+        )
+
+)
+
+[07-Jun-2026 14:49:02 UTC] === LOGIN REQUEST ===
+[07-Jun-2026 14:49:02 UTC] Email: huntly1306@gmail.com
+[07-Jun-2026 14:49:02 UTC] User found ID: 4
+[07-Jun-2026 14:49:02 UTC] LOGIN SUCCESS
+[07-Jun-2026 14:49:02 UTC] Array
 (
     [id] => 4
     [username] => huntly1306@gmail.com

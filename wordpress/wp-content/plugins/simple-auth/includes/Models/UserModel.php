@@ -133,4 +133,18 @@ class UserModel
 
         return $user;
     }
+
+    public function updatePassword($email, $password) 
+    {
+        $stmt = $this->db->prepare("
+            UPDATE users
+            SET password = ?
+            WHERE email = ?
+        ");
+
+        return $stmt->execute([
+            $password,
+            $email
+        ]);
+    }
 }
