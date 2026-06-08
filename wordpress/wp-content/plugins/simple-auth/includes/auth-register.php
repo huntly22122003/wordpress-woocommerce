@@ -22,6 +22,7 @@ function sa_handle_register()
     $username = trim($_POST['username'] ?? '');
     $email    = sanitize_email($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
+    $role = 'user'; // Mặc định role là 'user'
 
     if (!$username || !$email || !$password) {
         wp_die('Vui lòng nhập đầy đủ thông tin');
@@ -51,8 +52,10 @@ function sa_handle_register()
         'username' => $username,
         'email'    => $email,
         'password' => $password,
+        'role' => $role,
     ];
 
+    
     // Chuyển sang trang nhập OTP
     wp_redirect(home_url('/sa-otp'));
     exit;

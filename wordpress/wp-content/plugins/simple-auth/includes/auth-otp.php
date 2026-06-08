@@ -33,8 +33,10 @@ function sa_handle_otp_verify()
         $pendingUser['username'],
         NULL,
         NULL,
+        NULL,
         $pendingUser['email'],
-        $pendingUser['password']
+        $pendingUser['password'],
+        $pendingUser['role']
     );
 
     unset($_SESSION['sa_pending_user']);

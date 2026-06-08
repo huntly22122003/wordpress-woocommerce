@@ -58,6 +58,10 @@ function sa_handle_login()
 
     error_log('LOGIN SUCCESS');
     error_log(print_r($_SESSION['sa_user'], true));
+    if ($user['role'] === 'admin') {
+    wp_redirect(home_url('/admin'));
+    exit;
+    }
     
     echo '<script>';
     echo 'console.log(' . json_encode($_SESSION['sa_user']) . ')';

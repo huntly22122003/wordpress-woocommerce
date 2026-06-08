@@ -24,9 +24,11 @@ class UserModel
     public function create(
         $username,
         $gender,
+        $phone,
         $age,
         $email,
-        $password
+        $password,
+        $role
     ) {
 
         $hash = password_hash(
@@ -38,19 +40,23 @@ class UserModel
             INSERT INTO users (
                 username,
                 gender,
+                phone,
                 age,
                 email,
-                password
+                password,
+                role
             )
-            VALUES (?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
         ");
 
         return $stmt->execute([
             $username,
             $gender,
+            $phone,
             $age,
             $email,
-            $hash
+            $hash,
+            $role
         ]);
     }
 

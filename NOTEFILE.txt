@@ -16,26 +16,21 @@ SHOW TABLES;
 
 tạo 1 db sử dụng: docker exec -it mysql mysql -u root -p
 CREATE DATABASE auth_db;
-
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(100) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+DROP TABLE users;
 
 CREATE TABLE `users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `role` enum('admin','user') NOT NULL DEFAULT 'user',
   `password` varchar(255) NOT NULL,
   `gender` varchar(20) DEFAULT NULL,
   `age` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
 
 CREATE TABLE `otp_sessions` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,

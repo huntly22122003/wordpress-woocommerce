@@ -3499,3 +3499,340 @@ Stack trace:
 
 )
 
+[08-Jun-2026 04:13:23 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 11
+[08-Jun-2026 04:13:32 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 11
+[08-Jun-2026 04:13:59 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 11
+[08-Jun-2026 04:14:02 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-config.php:93) in /var/www/html/wp-includes/http.php on line 519
+[08-Jun-2026 04:14:02 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-config.php:93) in /var/www/html/wp-includes/http.php on line 520
+[08-Jun-2026 04:14:02 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-config.php:93) in /var/www/html/wp-admin/admin-ajax.php on line 27
+[08-Jun-2026 04:14:02 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-config.php:93) in /var/www/html/wp-admin/admin-ajax.php on line 28
+[08-Jun-2026 04:14:02 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-config.php:93) in /var/www/html/wp-includes/functions.php on line 7079
+[08-Jun-2026 04:14:02 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /var/www/html/wp-config.php:93) in /var/www/html/wp-includes/functions.php on line 7220
+[08-Jun-2026 04:17:13 UTC] === LOGIN REQUEST ===
+[08-Jun-2026 04:17:13 UTC] Email: huntly1306@gmail.com
+[08-Jun-2026 04:17:13 UTC] User found ID: 5
+[08-Jun-2026 04:17:13 UTC] INPUT PASSWORD: 123
+[08-Jun-2026 04:17:13 UTC] HASH IN DB: $2y$10$WGFeEVo2TvSkYxYOGw3U/udIuxHO2l5ssGeDAJvvBGvH9M8vu35Hi
+[08-Jun-2026 04:17:13 UTC] PASSWORD FAIL
+[08-Jun-2026 04:17:13 UTC] false
+[08-Jun-2026 04:17:13 UTC] LOGIN FAILED: Wrong password
+[08-Jun-2026 04:17:30 UTC] === LOGIN REQUEST ===
+[08-Jun-2026 04:17:30 UTC] Email: huntly1306@gmail.com
+[08-Jun-2026 04:17:30 UTC] User found ID: 5
+[08-Jun-2026 04:17:30 UTC] INPUT PASSWORD: 1234
+[08-Jun-2026 04:17:30 UTC] HASH IN DB: $2y$10$WGFeEVo2TvSkYxYOGw3U/udIuxHO2l5ssGeDAJvvBGvH9M8vu35Hi
+[08-Jun-2026 04:17:30 UTC] PASSWORD FAIL
+[08-Jun-2026 04:17:30 UTC] false
+[08-Jun-2026 04:17:31 UTC] LOGIN FAILED: Wrong password
+[08-Jun-2026 04:18:02 UTC] === MAIL DEBUG START ===
+[08-Jun-2026 04:18:02 UTC] Class: WPMailSMTP\MailCatcherV6
+[08-Jun-2026 04:18:02 UTC] Mailer: mail
+[08-Jun-2026 04:18:02 UTC] Host: localhost
+[08-Jun-2026 04:18:02 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
+            [line] => 38
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-forgot.php
+            [line] => 30
+            [function] => sa_send_otp_email
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => sa_handle_forgot_password
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-settings.php
+            [line] => 771
+            [function] => do_action
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-config.php
+            [line] => 110
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-settings.php
+                )
+
+            [function] => require_once
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-load.php
+            [line] => 50
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-config.php
+                )
+
+            [function] => require_once
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 13
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-load.php
+                )
+
+            [function] => require_once
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
+        )
+
+)
+
+[08-Jun-2026 04:19:48 UTC] === LOGIN REQUEST ===
+[08-Jun-2026 04:19:48 UTC] Email: huntly1306@gmail.com
+[08-Jun-2026 04:19:48 UTC] User found ID: 5
+[08-Jun-2026 04:19:48 UTC] LOGIN SUCCESS
+[08-Jun-2026 04:19:48 UTC] Array
+(
+    [id] => 5
+    [username] => admin
+    [email] => huntly1306@gmail.com
+)
+
+[08-Jun-2026 04:19:50 UTC] === LOGIN REQUEST ===
+[08-Jun-2026 04:19:50 UTC] Email: huntly1306@gmail.com
+[08-Jun-2026 04:19:50 UTC] User found ID: 5
+[08-Jun-2026 04:19:50 UTC] LOGIN SUCCESS
+[08-Jun-2026 04:19:50 UTC] Array
+(
+    [id] => 5
+    [username] => admin
+    [email] => huntly1306@gmail.com
+)
+
+[08-Jun-2026 04:20:04 UTC] === LOGIN REQUEST ===
+[08-Jun-2026 04:20:04 UTC] Email: huntly1306@gmail.com
+[08-Jun-2026 04:20:04 UTC] User found ID: 5
+[08-Jun-2026 04:20:04 UTC] LOGIN SUCCESS
+[08-Jun-2026 04:20:04 UTC] Array
+(
+    [id] => 5
+    [username] => admin
+    [email] => huntly1306@gmail.com
+)
+
+[08-Jun-2026 04:31:38 UTC] === MAIL DEBUG START ===
+[08-Jun-2026 04:31:38 UTC] Class: WPMailSMTP\MailCatcherV6
+[08-Jun-2026 04:31:38 UTC] Mailer: mail
+[08-Jun-2026 04:31:38 UTC] Host: localhost
+[08-Jun-2026 04:31:38 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
+            [line] => 38
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
+            [line] => 44
+            [function] => sa_send_otp_email
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => sa_handle_register
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-settings.php
+            [line] => 771
+            [function] => do_action
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-config.php
+            [line] => 110
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-settings.php
+                )
+
+            [function] => require_once
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-load.php
+            [line] => 50
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-config.php
+                )
+
+            [function] => require_once
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 13
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-load.php
+                )
+
+            [function] => require_once
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
+        )
+
+)
+
+[08-Jun-2026 04:32:47 UTC] === LOGIN REQUEST ===
+[08-Jun-2026 04:32:47 UTC] Email: huntly1306@gmail.com
+[08-Jun-2026 04:32:47 UTC] User found ID: 6
+[08-Jun-2026 04:32:47 UTC] LOGIN SUCCESS
+[08-Jun-2026 04:32:47 UTC] Array
+(
+    [id] => 6
+    [username] => huntly1306@gmail.com
+    [email] => huntly1306@gmail.com
+)
+
