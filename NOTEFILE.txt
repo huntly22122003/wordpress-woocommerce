@@ -40,3 +40,6 @@ CREATE TABLE `otp_sessions` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+ALTER TABLE users
+ADD wp_user_id BIGINT NULL;

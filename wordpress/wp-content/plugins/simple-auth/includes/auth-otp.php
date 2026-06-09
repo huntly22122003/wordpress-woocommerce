@@ -29,19 +29,35 @@ function sa_handle_otp_verify()
 
     // Tạo user
     $userModel = new UserModel();
-    $created = $userModel->create(
+    $wp_user_id = wp_create_user(
+        $pendingUser['email'],
+        $pendingUser['password'],
+        $pendingUser['email'],
+    );
+
+     if (is_wp_error($wp_user_id)) {
+        wp_die('Không thể tạo tài khoản WordPress');
+        error_log($wp_user_id->get_error_message());
+    }
+        $wp_user = new WP_User($wp_user_id);
+    $wp_user->set_role('customer');
+
+     $created = $userModel->create(
         $pendingUser['username'],
         NULL,
         NULL,
         NULL,
         $pendingUser['email'],
         $pendingUser['password'],
-        $pendingUser['role']
+        $pendingUser['role'],
+        $wp_user_id
     );
 
     unset($_SESSION['sa_pending_user']);
 
     if (!$created) {
+        require_once ABSPATH . 'wp-admin/includes/user.php';
+        wp_delete_user($wp_user_id);
         wp_die('Không thể tạo tài khoản');
     }
 
