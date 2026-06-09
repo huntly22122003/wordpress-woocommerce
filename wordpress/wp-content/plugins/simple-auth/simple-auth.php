@@ -11,6 +11,7 @@ add_action('init', function () {
         session_start();
     }
 });
+
 /*thêm backend thì thêm vào*/
 
 require_once plugin_dir_path(__FILE__) . 'DB/AuthDB.php';
