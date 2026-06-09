@@ -12,6 +12,11 @@ add_action('init', function () {
     }
 });
 /*thêm backend thì thêm vào*/
+
+require_once plugin_dir_path(__FILE__) . 'DB/AuthDB.php';
+
+require_once plugin_dir_path(__FILE__) . 'admin/user-page.php';
+require_once plugin_dir_path(__FILE__) . 'admin/menu.php';
 require_once plugin_dir_path(__FILE__) . 'includes/auth-register.php';
 require_once plugin_dir_path(__FILE__) . 'includes/auth-login.php';
 require_once plugin_dir_path(__FILE__) . 'includes/helpers.php';

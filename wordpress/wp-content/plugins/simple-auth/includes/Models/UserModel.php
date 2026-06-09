@@ -28,7 +28,8 @@ class UserModel
         $age,
         $email,
         $password,
-        $role
+        $role,
+        $wp_user_id = null
     ) {
 
         $hash = password_hash(
@@ -44,9 +45,10 @@ class UserModel
                 age,
                 email,
                 password,
-                role
+                role,
+                wp_user_id
             )
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         ");
 
         return $stmt->execute([
@@ -56,7 +58,8 @@ class UserModel
             $age,
             $email,
             $hash,
-            $role
+            $role,
+            $wp_user_id
         ]);
     }
 
@@ -152,5 +155,66 @@ class UserModel
             $password,
             $email
         ]);
+    }
+    public function getAll()
+    {
+        $stmt = $this->db->query("
+            SELECT *
+            FROM users
+            ORDER BY id DESC
+        ");
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function findById($id)
+    {
+        $stmt = $this->db->prepare("
+            SELECT *
+            FROM users
+            WHERE id = ?
+            LIMIT 1
+        ");
+
+        $stmt->execute([$id]);
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function updateRole($id, $role)
+    {
+        $stmt = $this->db->prepare("
+            UPDATE users
+            SET role = ?
+            WHERE id = ?
+        ");
+
+        return $stmt->execute([
+            $role,
+            $id
+        ]);
+    }
+
+    public function delete($id)
+    {
+    $user = $this->findById($id);
+
+
+    if (!empty($user['wp_user_id'])) {
+
+        require_once ABSPATH . 'wp-admin/includes/user.php';
+
+        $result = wp_delete_user(
+            (int)$user['wp_user_id']
+        );
+
+    }
+
+    $stmt = $this->db->prepare("
+        DELETE FROM users
+        WHERE id = ?
+    ");
+
+    return $stmt->execute([$id]);
     }
 }
