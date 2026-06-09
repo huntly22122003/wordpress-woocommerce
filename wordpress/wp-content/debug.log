@@ -3836,3 +3836,420 @@ Stack trace:
     [email] => huntly1306@gmail.com
 )
 
+[09-Jun-2026 00:19:24 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): Connection refused in /var/www/html/wp-includes/class-wpdb.php on line 1988
+[09-Jun-2026 02:25:09 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-auth/includes/AuthDB.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 16
+[09-Jun-2026 02:25:09 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-auth/includes/AuthDB.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php:16
+Stack trace:
+#0 /var/www/html/wp-settings.php(589): include_once()
+#1 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 16
+[09-Jun-2026 02:25:17 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-auth/includes/AuthDB.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 16
+[09-Jun-2026 02:25:17 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-auth/includes/AuthDB.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php:16
+Stack trace:
+#0 /var/www/html/wp-settings.php(589): include_once()
+#1 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 16
+[09-Jun-2026 02:26:04 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-auth/includes/DB/AuthDB.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 16
+[09-Jun-2026 02:26:04 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-auth/includes/DB/AuthDB.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php:16
+Stack trace:
+#0 /var/www/html/wp-settings.php(589): include_once()
+#1 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 16
+[09-Jun-2026 02:26:04 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-auth/includes/DB/AuthDB.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 16
+[09-Jun-2026 02:26:04 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-auth/includes/DB/AuthDB.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php:16
+Stack trace:
+#0 /var/www/html/wp-settings.php(589): include_once()
+#1 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...')
+#4 /var/www/html/index.php(17): require('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 16
+[09-Jun-2026 02:26:10 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-auth/includes/DB/AuthDB.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 16
+[09-Jun-2026 02:26:10 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-auth/includes/DB/AuthDB.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php:16
+Stack trace:
+#0 /var/www/html/wp-settings.php(589): include_once()
+#1 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 16
+[09-Jun-2026 02:26:27 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-auth/admin/users-page.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 18
+[09-Jun-2026 02:26:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-auth/admin/users-page.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php:18
+Stack trace:
+#0 /var/www/html/wp-settings.php(589): include_once()
+#1 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 18
+[09-Jun-2026 02:26:27 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-auth/admin/users-page.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 18
+[09-Jun-2026 02:26:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-auth/admin/users-page.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php:18
+Stack trace:
+#0 /var/www/html/wp-settings.php(589): include_once()
+#1 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...')
+#4 /var/www/html/index.php(17): require('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/simple-auth/simple-auth.php on line 18
+[09-Jun-2026 02:26:48 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-auth/includes/AuthDB.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php on line 5
+[09-Jun-2026 02:26:48 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-auth/includes/AuthDB.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php:5
+Stack trace:
+#0 /var/www/html/wp-content/plugins/simple-auth/simple-auth.php(18): require_once()
+#1 /var/www/html/wp-settings.php(589): include_once('/var/www/html/w...')
+#2 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#5 /var/www/html/wp-admin/index.php(10): require_once('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php on line 5
+[09-Jun-2026 02:26:48 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-auth/includes/AuthDB.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php on line 5
+[09-Jun-2026 02:26:48 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-auth/includes/AuthDB.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php:5
+Stack trace:
+#0 /var/www/html/wp-content/plugins/simple-auth/simple-auth.php(18): require_once()
+#1 /var/www/html/wp-settings.php(589): include_once('/var/www/html/w...')
+#2 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...')
+#5 /var/www/html/index.php(17): require('/var/www/html/w...')
+#6 {main}
+  thrown in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php on line 5
+[09-Jun-2026 02:27:01 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-auth/includes/AuthDB.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php on line 5
+[09-Jun-2026 02:27:01 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-auth/includes/AuthDB.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php:5
+Stack trace:
+#0 /var/www/html/wp-content/plugins/simple-auth/simple-auth.php(18): require_once()
+#1 /var/www/html/wp-settings.php(589): include_once('/var/www/html/w...')
+#2 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php on line 5
+[09-Jun-2026 02:33:01 UTC] === LOGIN REQUEST ===
+[09-Jun-2026 02:33:01 UTC] Email: huntly1306@gmail.com
+[09-Jun-2026 02:33:01 UTC] User found ID: 6
+[09-Jun-2026 02:33:01 UTC] LOGIN SUCCESS
+[09-Jun-2026 02:33:01 UTC] Array
+(
+    [id] => 6
+    [username] => huntly1306@gmail.com
+    [email] => huntly1306@gmail.com
+)
+
+[09-Jun-2026 02:33:15 UTC] === LOGIN REQUEST ===
+[09-Jun-2026 02:33:15 UTC] Email: huntly1306@gmail.com
+[09-Jun-2026 02:33:15 UTC] User found ID: 6
+[09-Jun-2026 02:33:15 UTC] LOGIN SUCCESS
+[09-Jun-2026 02:33:15 UTC] Array
+(
+    [id] => 6
+    [username] => huntly1306@gmail.com
+    [email] => huntly1306@gmail.com
+)
+
+[09-Jun-2026 02:44:47 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-auth/admin/DB/AuthDB.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php on line 5
+[09-Jun-2026 02:44:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-auth/admin/DB/AuthDB.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php:5
+Stack trace:
+#0 /var/www/html/wp-content/plugins/simple-auth/simple-auth.php(18): require_once()
+#1 /var/www/html/wp-settings.php(589): include_once('/var/www/html/w...')
+#2 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/simple-auth/admin/user-page.php on line 5
+[09-Jun-2026 02:48:06 UTC] === MAIL DEBUG START ===
+[09-Jun-2026 02:48:06 UTC] Class: WPMailSMTP\MailCatcherV6
+[09-Jun-2026 02:48:06 UTC] Mailer: mail
+[09-Jun-2026 02:48:06 UTC] Host: localhost
+[09-Jun-2026 02:48:06 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
+            [line] => 38
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
+            [line] => 44
+            [function] => sa_send_otp_email
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => sa_handle_register
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-settings.php
+            [line] => 771
+            [function] => do_action
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-config.php
+            [line] => 110
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-settings.php
+                )
+
+            [function] => require_once
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-load.php
+            [line] => 50
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-config.php
+                )
+
+            [function] => require_once
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 13
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-load.php
+                )
+
+            [function] => require_once
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
+        )
+
+)
+
+[09-Jun-2026 02:49:06 UTC] === LOGIN REQUEST ===
+[09-Jun-2026 02:49:06 UTC] Email: lynguyenquochung22122003@gmail.com
+[09-Jun-2026 02:49:06 UTC] User found ID: 7
+[09-Jun-2026 02:49:06 UTC] INPUT PASSWORD: 123456789.
+[09-Jun-2026 02:49:06 UTC] HASH IN DB: $2y$10$/oyRxEJ4r460NZTViK2U1.i7qk1kH2BMhR4e2MiL/hFihaDubdAcK
+[09-Jun-2026 02:49:06 UTC] PASSWORD FAIL
+[09-Jun-2026 02:49:06 UTC] false
+[09-Jun-2026 02:49:06 UTC] LOGIN FAILED: Wrong password
+[09-Jun-2026 02:49:20 UTC] === LOGIN REQUEST ===
+[09-Jun-2026 02:49:20 UTC] Email: lynguyenquochung22122003@gmail.com
+[09-Jun-2026 02:49:20 UTC] User found ID: 7
+[09-Jun-2026 02:49:20 UTC] INPUT PASSWORD: 123456789.
+[09-Jun-2026 02:49:20 UTC] HASH IN DB: $2y$10$/oyRxEJ4r460NZTViK2U1.i7qk1kH2BMhR4e2MiL/hFihaDubdAcK
+[09-Jun-2026 02:49:20 UTC] PASSWORD FAIL
+[09-Jun-2026 02:49:21 UTC] false
+[09-Jun-2026 02:49:21 UTC] LOGIN FAILED: Wrong password
+[09-Jun-2026 02:49:41 UTC] === MAIL DEBUG START ===
+[09-Jun-2026 02:49:41 UTC] Class: WPMailSMTP\MailCatcherV6
+[09-Jun-2026 02:49:41 UTC] Mailer: mail
+[09-Jun-2026 02:49:41 UTC] Host: localhost
+[09-Jun-2026 02:49:41 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
+            [line] => 38
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-forgot.php
+            [line] => 30
+            [function] => sa_send_otp_email
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => sa_handle_forgot_password
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-settings.php
+            [line] => 771
+            [function] => do_action
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-config.php
+            [line] => 110
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-settings.php
+                )
+
+            [function] => require_once
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-load.php
+            [line] => 50
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-config.php
+                )
+
+            [function] => require_once
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 13
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-load.php
+                )
+
+            [function] => require_once
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
+        )
+
+)
+
