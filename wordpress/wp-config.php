@@ -85,13 +85,21 @@ $table_prefix = 'wp_';
  *
  * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
-define( 'WP_DEBUG', false );
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', true);
 
 /* Add any custom values between this line and the "stop editing" line. */
-
+$env = parse_ini_file(__DIR__ . '/.env');
 
 
 /* That's all, stop editing! Happy publishing. */
+define('SA_DB_HOST', 'mysql');
+define('SA_DB_NAME', 'auth_db');
+define('SA_DB_USER', 'root');
+define('SA_DB_PASS', 'rootpassword');
+define('FS_METHOD', 'direct');
+define('PASSKEY', $env['PASSKEY']);
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
@@ -100,3 +108,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
