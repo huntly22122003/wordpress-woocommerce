@@ -1,46 +1,22 @@
 <?php
 /*
-Plugin Name: Welcome Page
+Plugin Name: SA Home Shop
+Version: 1.0
 */
 
-add_action('init', function () {
-    add_rewrite_rule(
-        '^welcomenewmember/?$',
-        'index.php?welcome_page=1',
-        'top'
-    );
-});
+defined('ABSPATH') || exit;
 
-add_filter('query_vars', function ($vars) {
-    $vars[] = 'welcome_page';
-    return $vars;
-});
-
-register_activation_hook(__FILE__, function () {
-    flush_rewrite_rules();
-});
-
-register_deactivation_hook(__FILE__, function () {
-    flush_rewrite_rules();
-});
-
+require plugin_dir_path(__FILE__) . 'views/frontpage.php';
 add_action('template_redirect', function () {
-    if (get_query_var('welcome_page')) {
-        ?>
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>Welcome</title>
-        </head>
-        <body>
-            <h1>Welcome Hùng!</h1>
 
-            <a href="/">Home</a>
-            <br>
-            <a href="/shop">Shop</a>
-        </body>
-        </html>
-        <?php
+    if (is_front_page()) {
+
+        echo sa_home_shop_full();
         exit;
     }
+});
+
+
+add_action('init', function () {
+    add_shortcode('sa_home', 'sa_home_shop_full');
 });
