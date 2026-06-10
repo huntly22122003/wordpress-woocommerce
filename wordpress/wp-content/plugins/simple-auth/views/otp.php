@@ -1,3 +1,16 @@
+<?php
+if (!session_id()) {
+    session_start();
+}
+
+// 🔥 lấy message từ BE
+$error = $_SESSION['sa_error'] ?? null;
+$success = $_SESSION['sa_success'] ?? null;
+
+// clear sau khi đọc (tránh lặp lại)
+unset($_SESSION['sa_error'], $_SESSION['sa_success']);
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
