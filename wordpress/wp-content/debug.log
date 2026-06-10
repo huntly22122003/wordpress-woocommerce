@@ -1,52 +1,8 @@
-[10-Jun-2026 06:35:40 UTC] === LOGIN REQUEST ===
-[10-Jun-2026 06:35:40 UTC] Email: 1234@zz
-[10-Jun-2026 06:35:40 UTC] Session error: User not found
-[10-Jun-2026 06:38:55 UTC] === LOGIN REQUEST ===
-[10-Jun-2026 06:38:55 UTC] Email: 123123@g
-[10-Jun-2026 06:55:08 UTC] === LOGIN REQUEST ===
-[10-Jun-2026 06:55:08 UTC] Email: lynguyenquochung22122003@gmail.com
-[10-Jun-2026 06:55:08 UTC] User found ID: 3
-[10-Jun-2026 06:55:08 UTC] LOGIN SUCCESS
-[10-Jun-2026 06:55:08 UTC] Array
-(
-    [id] => 3
-    [username] => 123
-    [email] => lynguyenquochung22122003@gmail.com
-    [wp_user_id] => 4
-)
-
-[10-Jun-2026 06:59:11 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/simple-order/includes/../../includes/class-so-logout.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/simple-order/includes/class-so-loader.php on line 31
-[10-Jun-2026 06:59:11 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/simple-order/includes/../../includes/class-so-logout.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/simple-order/includes/class-so-loader.php:31
-Stack trace:
-#0 /var/www/html/wp-content/plugins/simple-order/includes/class-so-loader.php(7): SO_Loader->includes()
-#1 /var/www/html/wp-content/plugins/simple-order/simple-order.php(13): SO_Loader->__construct()
-#2 /var/www/html/wp-includes/class-wp-hook.php(341): so_init_plugin('')
-#3 /var/www/html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
-#4 /var/www/html/wp-includes/plugin.php(522): WP_Hook->do_action(Array)
-#5 /var/www/html/wp-settings.php(622): do_action('plugins_loaded')
-#6 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
-#7 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
-#8 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
-#9 {main}
-  thrown in /var/www/html/wp-content/plugins/simple-order/includes/class-so-loader.php on line 31
-[10-Jun-2026 06:59:11 UTC] PHP Notice:  Function _load_textdomain_just_in_time was called <strong>incorrectly</strong>. Translation loading for the <code>woocommerce</code> domain was triggered too early. This is usually an indicator for some code in the plugin or theme running too early. Translations should be loaded at the <code>init</code> action or later. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 6.7.0.) in /var/www/html/wp-includes/functions.php on line 6170
-[10-Jun-2026 07:17:38 UTC] === LOGIN REQUEST ===
-[10-Jun-2026 07:17:38 UTC] Email: lynguyenquochung22122003@gmail.com
-[10-Jun-2026 07:17:38 UTC] User found ID: 3
-[10-Jun-2026 07:17:38 UTC] LOGIN SUCCESS
-[10-Jun-2026 07:17:38 UTC] Array
-(
-    [id] => 3
-    [username] => 123
-    [email] => lynguyenquochung22122003@gmail.com
-    [wp_user_id] => 4
-)
-
-[10-Jun-2026 07:28:12 UTC] === MAIL DEBUG START ===
-[10-Jun-2026 07:28:13 UTC] Class: WPMailSMTP\MailCatcherV6
-[10-Jun-2026 07:28:13 UTC] Mailer: mail
-[10-Jun-2026 07:28:13 UTC] Host: localhost
-[10-Jun-2026 07:28:13 UTC] Array
+[10-Jun-2026 08:58:16 UTC] === MAIL DEBUG START ===
+[10-Jun-2026 08:58:16 UTC] Class: WPMailSMTP\MailCatcherV6
+[10-Jun-2026 08:58:16 UTC] Mailer: mail
+[10-Jun-2026 08:58:16 UTC] Host: localhost
+[10-Jun-2026 08:58:16 UTC] Array
 (
     [0] => Array
         (
@@ -82,23 +38,27 @@ Stack trace:
 
     [4] => Array
         (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email.php
+            [line] => 1136
             [function] => wp_mail
         )
 
     [5] => Array
         (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 44
-            [function] => sa_send_otp_email
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email-admin-payment-gateway-enabled.php
+            [line] => 148
+            [function] => send
+            [class] => WC_Email
+            [type] => ->
         )
 
     [6] => Array
         (
             [file] => /var/www/html/wp-includes/class-wp-hook.php
             [line] => 341
-            [function] => sa_handle_register
+            [function] => trigger
+            [class] => WC_Email_Admin_Payment_Gateway_Enabled
+            [type] => ->
         )
 
     [7] => Array
@@ -113,7 +73,7 @@ Stack trace:
     [8] => Array
         (
             [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 522
+            [line] => 570
             [function] => do_action
             [class] => WP_Hook
             [type] => ->
@@ -121,48 +81,498 @@ Stack trace:
 
     [9] => Array
         (
-            [file] => /var/www/html/wp-settings.php
-            [line] => 771
-            [function] => do_action
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-emails.php
+            [line] => 219
+            [function] => do_action_ref_array
         )
 
     [10] => Array
         (
-            [file] => /var/www/html/wp-config.php
-            [line] => 110
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-settings.php
-                )
-
-            [function] => require_once
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => send_transactional_email
+            [class] => WC_Emails
+            [type] => ::
         )
 
     [11] => Array
         (
-            [file] => /var/www/html/wp-load.php
-            [line] => 50
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-config.php
-                )
-
-            [function] => require_once
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
         )
 
     [12] => Array
         (
-            [file] => /var/www/html/wp-blog-header.php
-            [line] => 13
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-load.php
-                )
-
-            [function] => require_once
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
         )
 
     [13] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-payment-gateways.php
+            [line] => 199
+            [function] => do_action
+        )
+
+    [14] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-payment-gateways.php
+            [line] => 164
+            [function] => payment_gateway_settings_option_changed
+            [class] => WC_Payment_Gateways
+            [type] => ->
+        )
+
+    [15] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+            [class] => WC_Payment_Gateways
+            [type] => ->
+        )
+
+    [16] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [17] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [18] => Array
+        (
+            [file] => /var/www/html/wp-includes/option.php
+            [line] => 1017
+            [function] => do_action
+        )
+
+    [19] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/class-wc-stripe-helper.php
+            [line] => 65
+            [function] => update_option
+        )
+
+    [20] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/connect/class-wc-stripe-connect.php
+            [line] => 297
+            [function] => update_main_stripe_settings
+            [class] => WC_Stripe_Helper
+            [type] => ::
+        )
+
+    [21] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/connect/class-wc-stripe-connect.php
+            [line] => 138
+            [function] => save_stripe_keys
+            [class] => WC_Stripe_Connect
+            [type] => ->
+        )
+
+    [22] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/connect/class-wc-stripe-connect.php
+            [line] => 191
+            [function] => connect_oauth
+            [class] => WC_Stripe_Connect
+            [type] => ->
+        )
+
+    [23] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => maybe_handle_redirect
+            [class] => WC_Stripe_Connect
+            [type] => ->
+        )
+
+    [24] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [25] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [26] => Array
+        (
+            [file] => /var/www/html/wp-admin/admin.php
+            [line] => 180
+            [function] => do_action
+        )
+
+)
+
+[10-Jun-2026 09:32:17 UTC] === MAIL DEBUG START ===
+[10-Jun-2026 09:32:17 UTC] Class: WPMailSMTP\MailCatcherV6
+[10-Jun-2026 09:32:17 UTC] Mailer: mail
+[10-Jun-2026 09:32:17 UTC] Host: localhost
+[10-Jun-2026 09:32:17 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email.php
+            [line] => 1136
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email-new-order.php
+            [line] => 127
+            [function] => send
+            [class] => WC_Email
+            [type] => ->
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => trigger
+            [class] => WC_Email_New_Order
+            [type] => ->
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-emails.php
+            [line] => 219
+            [function] => do_action_ref_array
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => send_transactional_email
+            [class] => WC_Emails
+            [type] => ::
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 476
+            [function] => do_action
+        )
+
+    [14] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 285
+            [function] => status_transition
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [15] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 183
+            [function] => save
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [16] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/abstracts/abstract-wc-stripe-payment-gateway.php
+            [line] => 661
+            [function] => payment_complete
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [17] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1640
+            [function] => process_response
+            [class] => WC_Stripe_Payment_Gateway
+            [type] => ->
+        )
+
+    [18] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1405
+            [function] => process_payment_with_payment_method
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [19] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1390
+            [function] => process_payment_with_deferred_intent
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [20] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Legacy.php
+            [line] => 56
+            [function] => process_payment
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [21] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => process_legacy_payment
+            [class] => Automattic\WooCommerce\StoreApi\Legacy
+            [type] => ->
+        )
+
+    [22] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [23] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [24] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Utilities/CheckoutTrait.php
+            [line] => 82
+            [function] => do_action_ref_array
+        )
+
+    [25] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 557
+            [function] => process_payment
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [26] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php
+            [line] => 119
+            [function] => get_route_post_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [27] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 158
+            [function] => get_response_by_request_method
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\AbstractRoute
+            [type] => ->
+        )
+
+    [28] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1287
+            [function] => get_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [29] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1120
+            [function] => respond_to_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [30] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 435
+            [function] => dispatch
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [31] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api.php
+            [line] => 471
+            [function] => serve_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [32] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => rest_api_loaded
+        )
+
+    [33] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [34] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [35] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 418
+            [function] => do_action_ref_array
+        )
+
+    [36] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 821
+            [function] => parse_request
+            [class] => WP
+            [type] => ->
+        )
+
+    [37] => Array
+        (
+            [file] => /var/www/html/wp-includes/functions.php
+            [line] => 1343
+            [function] => main
+            [class] => WP
+            [type] => ->
+        )
+
+    [38] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 16
+            [function] => wp
+        )
+
+    [39] => Array
         (
             [file] => /var/www/html/index.php
             [line] => 17
@@ -176,23 +586,11 @@ Stack trace:
 
 )
 
-[10-Jun-2026 07:29:07 UTC] === LOGIN REQUEST ===
-[10-Jun-2026 07:29:07 UTC] Email: gunviet123@gmail.com
-[10-Jun-2026 07:29:07 UTC] User found ID: 4
-[10-Jun-2026 07:29:07 UTC] LOGIN SUCCESS
-[10-Jun-2026 07:29:07 UTC] Array
-(
-    [id] => 4
-    [username] => gunviet123@gmail.com
-    [email] => gunviet123@gmail.com
-    [wp_user_id] => 5
-)
-
-[10-Jun-2026 07:34:00 UTC] === MAIL DEBUG START ===
-[10-Jun-2026 07:34:00 UTC] Class: WPMailSMTP\MailCatcherV6
-[10-Jun-2026 07:34:00 UTC] Mailer: mail
-[10-Jun-2026 07:34:00 UTC] Host: localhost
-[10-Jun-2026 07:34:00 UTC] Array
+[10-Jun-2026 09:32:21 UTC] === MAIL DEBUG START ===
+[10-Jun-2026 09:32:21 UTC] Class: WPMailSMTP\MailCatcherV6
+[10-Jun-2026 09:32:21 UTC] Mailer: mail
+[10-Jun-2026 09:32:21 UTC] Host: smtp.gmail.com
+[10-Jun-2026 09:32:21 UTC] Array
 (
     [0] => Array
         (
@@ -228,23 +626,27 @@ Stack trace:
 
     [4] => Array
         (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email.php
+            [line] => 1136
             [function] => wp_mail
         )
 
     [5] => Array
         (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 44
-            [function] => sa_send_otp_email
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email-customer-processing-order.php
+            [line] => 103
+            [function] => send
+            [class] => WC_Email
+            [type] => ->
         )
 
     [6] => Array
         (
             [file] => /var/www/html/wp-includes/class-wp-hook.php
             [line] => 341
-            [function] => sa_handle_register
+            [function] => trigger
+            [class] => WC_Email_Customer_Processing_Order
+            [type] => ->
         )
 
     [7] => Array
@@ -257,94 +659,6 @@ Stack trace:
         )
 
     [8] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 522
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [9] => Array
-        (
-            [file] => /var/www/html/wp-settings.php
-            [line] => 771
-            [function] => do_action
-        )
-
-    [10] => Array
-        (
-            [file] => /var/www/html/wp-config.php
-            [line] => 110
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-settings.php
-                )
-
-            [function] => require_once
-        )
-
-    [11] => Array
-        (
-            [file] => /var/www/html/wp-load.php
-            [line] => 50
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-config.php
-                )
-
-            [function] => require_once
-        )
-
-    [12] => Array
-        (
-            [file] => /var/www/html/wp-blog-header.php
-            [line] => 13
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-load.php
-                )
-
-            [function] => require_once
-        )
-
-    [13] => Array
-        (
-            [file] => /var/www/html/index.php
-            [line] => 17
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-blog-header.php
-                )
-
-            [function] => require
-        )
-
-)
-
-[10-Jun-2026 07:35:37 UTC] === MAIL DEBUG START ===
-[10-Jun-2026 07:35:37 UTC] Class: WPMailSMTP\MailCatcherV6
-[10-Jun-2026 07:35:38 UTC] Mailer: mail
-[10-Jun-2026 07:35:38 UTC] Host: localhost
-[10-Jun-2026 07:35:38 UTC] Array
-(
-    [0] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => {closure}
-        )
-
-    [1] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [2] => Array
         (
             [file] => /var/www/html/wp-includes/plugin.php
             [line] => 570
@@ -353,35 +667,23 @@ Stack trace:
             [type] => ->
         )
 
-    [3] => Array
+    [9] => Array
         (
-            [file] => /var/www/html/wp-includes/pluggable.php
-            [line] => 622
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-emails.php
+            [line] => 219
             [function] => do_action_ref_array
         )
 
-    [4] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
-            [function] => wp_mail
-        )
-
-    [5] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 44
-            [function] => sa_send_otp_email
-        )
-
-    [6] => Array
+    [10] => Array
         (
             [file] => /var/www/html/wp-includes/class-wp-hook.php
             [line] => 341
-            [function] => sa_handle_register
+            [function] => send_transactional_email
+            [class] => WC_Emails
+            [type] => ::
         )
 
-    [7] => Array
+    [11] => Array
         (
             [file] => /var/www/html/wp-includes/class-wp-hook.php
             [line] => 365
@@ -390,7 +692,7 @@ Stack trace:
             [type] => ->
         )
 
-    [8] => Array
+    [12] => Array
         (
             [file] => /var/www/html/wp-includes/plugin.php
             [line] => 522
@@ -399,77 +701,86 @@ Stack trace:
             [type] => ->
         )
 
-    [9] => Array
+    [13] => Array
         (
-            [file] => /var/www/html/wp-settings.php
-            [line] => 771
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 476
             [function] => do_action
         )
 
-    [10] => Array
+    [14] => Array
         (
-            [file] => /var/www/html/wp-config.php
-            [line] => 110
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-settings.php
-                )
-
-            [function] => require_once
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 285
+            [function] => status_transition
+            [class] => WC_Order
+            [type] => ->
         )
 
-    [11] => Array
+    [15] => Array
         (
-            [file] => /var/www/html/wp-load.php
-            [line] => 50
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-config.php
-                )
-
-            [function] => require_once
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 183
+            [function] => save
+            [class] => WC_Order
+            [type] => ->
         )
 
-    [12] => Array
+    [16] => Array
         (
-            [file] => /var/www/html/wp-blog-header.php
-            [line] => 13
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-load.php
-                )
-
-            [function] => require_once
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/abstracts/abstract-wc-stripe-payment-gateway.php
+            [line] => 661
+            [function] => payment_complete
+            [class] => WC_Order
+            [type] => ->
         )
 
-    [13] => Array
+    [17] => Array
         (
-            [file] => /var/www/html/index.php
-            [line] => 17
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-blog-header.php
-                )
-
-            [function] => require
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1640
+            [function] => process_response
+            [class] => WC_Stripe_Payment_Gateway
+            [type] => ->
         )
 
-)
+    [18] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1405
+            [function] => process_payment_with_payment_method
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
 
-[10-Jun-2026 07:57:04 UTC] === MAIL DEBUG START ===
-[10-Jun-2026 07:57:04 UTC] Class: WPMailSMTP\MailCatcherV6
-[10-Jun-2026 07:57:05 UTC] Mailer: mail
-[10-Jun-2026 07:57:05 UTC] Host: localhost
-[10-Jun-2026 07:57:05 UTC] Array
-(
-    [0] => Array
+    [19] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1390
+            [function] => process_payment_with_deferred_intent
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [20] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Legacy.php
+            [line] => 56
+            [function] => process_payment
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [21] => Array
         (
             [file] => /var/www/html/wp-includes/class-wp-hook.php
             [line] => 341
-            [function] => {closure}
+            [function] => process_legacy_payment
+            [class] => Automattic\WooCommerce\StoreApi\Legacy
+            [type] => ->
         )
 
-    [1] => Array
+    [22] => Array
         (
             [file] => /var/www/html/wp-includes/class-wp-hook.php
             [line] => 365
@@ -478,7 +789,7 @@ Stack trace:
             [type] => ->
         )
 
-    [2] => Array
+    [23] => Array
         (
             [file] => /var/www/html/wp-includes/plugin.php
             [line] => 570
@@ -487,35 +798,84 @@ Stack trace:
             [type] => ->
         )
 
-    [3] => Array
+    [24] => Array
         (
-            [file] => /var/www/html/wp-includes/pluggable.php
-            [line] => 622
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Utilities/CheckoutTrait.php
+            [line] => 82
             [function] => do_action_ref_array
         )
 
-    [4] => Array
+    [25] => Array
         (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
-            [function] => wp_mail
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 557
+            [function] => process_payment
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
         )
 
-    [5] => Array
+    [26] => Array
         (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 54
-            [function] => sa_send_otp_email
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php
+            [line] => 119
+            [function] => get_route_post_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
         )
 
-    [6] => Array
+    [27] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 158
+            [function] => get_response_by_request_method
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\AbstractRoute
+            [type] => ->
+        )
+
+    [28] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1287
+            [function] => get_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [29] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1120
+            [function] => respond_to_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [30] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 435
+            [function] => dispatch
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [31] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api.php
+            [line] => 471
+            [function] => serve_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [32] => Array
         (
             [file] => /var/www/html/wp-includes/class-wp-hook.php
             [line] => 341
-            [function] => sa_handle_register
+            [function] => rest_api_loaded
         )
 
-    [7] => Array
+    [33] => Array
         (
             [file] => /var/www/html/wp-includes/class-wp-hook.php
             [line] => 365
@@ -524,95 +884,7 @@ Stack trace:
             [type] => ->
         )
 
-    [8] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 522
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [9] => Array
-        (
-            [file] => /var/www/html/wp-settings.php
-            [line] => 771
-            [function] => do_action
-        )
-
-    [10] => Array
-        (
-            [file] => /var/www/html/wp-config.php
-            [line] => 110
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-settings.php
-                )
-
-            [function] => require_once
-        )
-
-    [11] => Array
-        (
-            [file] => /var/www/html/wp-load.php
-            [line] => 50
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-config.php
-                )
-
-            [function] => require_once
-        )
-
-    [12] => Array
-        (
-            [file] => /var/www/html/wp-blog-header.php
-            [line] => 13
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-load.php
-                )
-
-            [function] => require_once
-        )
-
-    [13] => Array
-        (
-            [file] => /var/www/html/index.php
-            [line] => 17
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-blog-header.php
-                )
-
-            [function] => require
-        )
-
-)
-
-[10-Jun-2026 07:59:12 UTC] === MAIL DEBUG START ===
-[10-Jun-2026 07:59:12 UTC] Class: WPMailSMTP\MailCatcherV6
-[10-Jun-2026 07:59:12 UTC] Mailer: mail
-[10-Jun-2026 07:59:12 UTC] Host: localhost
-[10-Jun-2026 07:59:12 UTC] Array
-(
-    [0] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => {closure}
-        )
-
-    [1] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [2] => Array
+    [34] => Array
         (
             [file] => /var/www/html/wp-includes/plugin.php
             [line] => 570
@@ -621,96 +893,39 @@ Stack trace:
             [type] => ->
         )
 
-    [3] => Array
+    [35] => Array
         (
-            [file] => /var/www/html/wp-includes/pluggable.php
-            [line] => 622
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 418
             [function] => do_action_ref_array
         )
 
-    [4] => Array
+    [36] => Array
         (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
-            [function] => wp_mail
-        )
-
-    [5] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 54
-            [function] => sa_send_otp_email
-        )
-
-    [6] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => sa_handle_register
-        )
-
-    [7] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 821
+            [function] => parse_request
+            [class] => WP
             [type] => ->
         )
 
-    [8] => Array
+    [37] => Array
         (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 522
-            [function] => do_action
-            [class] => WP_Hook
+            [file] => /var/www/html/wp-includes/functions.php
+            [line] => 1343
+            [function] => main
+            [class] => WP
             [type] => ->
         )
 
-    [9] => Array
-        (
-            [file] => /var/www/html/wp-settings.php
-            [line] => 771
-            [function] => do_action
-        )
-
-    [10] => Array
-        (
-            [file] => /var/www/html/wp-config.php
-            [line] => 110
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-settings.php
-                )
-
-            [function] => require_once
-        )
-
-    [11] => Array
-        (
-            [file] => /var/www/html/wp-load.php
-            [line] => 50
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-config.php
-                )
-
-            [function] => require_once
-        )
-
-    [12] => Array
+    [38] => Array
         (
             [file] => /var/www/html/wp-blog-header.php
-            [line] => 13
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-load.php
-                )
-
-            [function] => require_once
+            [line] => 16
+            [function] => wp
         )
 
-    [13] => Array
+    [39] => Array
         (
             [file] => /var/www/html/index.php
             [line] => 17
