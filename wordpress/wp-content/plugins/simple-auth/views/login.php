@@ -2,6 +2,12 @@
 // Xử lý login
 $login_error = sa_handle_login();
 ?>
+<?php if (!empty($_SESSION['sa_error'])): ?>
+<script>
+    alert(<?php echo json_encode($_SESSION['sa_error']); ?>);
+</script>
+<?php unset($_SESSION['sa_error']); ?>
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>

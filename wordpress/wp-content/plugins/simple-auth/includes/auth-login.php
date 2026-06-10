@@ -10,16 +10,21 @@ function sa_handle_login()
         return;
     }
 
+    if (!session_id()) {
+        session_start();
+    }
     error_log('=== LOGIN REQUEST ===');
 
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    error_log('Email: ' . $email);
+    error_log('Email: ' . $email);  
 
     if (!$email || !$password) {
-        error_log('LOGIN FAILED: Missing email or password');
-        return 'Missing email or password';
+        $_SESSION['sa_error'] = 'Missing email or password';
+        error_log('Session error: ' . print_r($_SESSION['sa_error'], true));
+        wp_redirect(home_url('/sa-login'));
+        exit;
     }
 
     $model = new UserModel();
@@ -27,23 +32,17 @@ function sa_handle_login()
     $user = $model->findByEmail($email);
 
     if (!$user) {
-        error_log('LOGIN FAILED: User not found');
-        return 'User not found';
+        $_SESSION['sa_error'] = 'User not found';
+        wp_redirect(home_url('/sa-login'));
+        exit;
     }
 
     error_log('User found ID: ' . $user['id']);
 
     if (!password_verify($password, $user['password'])) {
-            error_log('INPUT PASSWORD: ' . $password);
-    error_log('HASH IN DB: ' . $user['password']);
-    error_log(
-        password_verify($password, $user['password'])
-            ? 'PASSWORD OK'
-            : 'PASSWORD FAIL'
-    );
-        error_log(var_export(password_verify('123', $user['password']), true));
-        error_log('LOGIN FAILED: Wrong password');
-        return 'Wrong password';
+        $_SESSION['sa_error'] = 'Wrong password';
+        wp_redirect(home_url('/sa-login'));
+        exit;
     }
 
     if (!session_id()) {
@@ -61,17 +60,18 @@ function sa_handle_login()
     error_log('LOGIN SUCCESS');
     error_log(print_r($_SESSION['sa_user'], true));
     if ($user['role'] === 'admin') {
-    wp_redirect(home_url('/admin'));
+    wp_redirect(home_url('/wp-admin'));
     exit;
     }
-    if ($user['role'] === 'user') {
+    else if ($user['role'] === 'user') {
     wp_redirect(home_url('/simple-order'));
     exit;
     }
-    
-    echo '<script>';
-    echo 'console.log(' . json_encode($_SESSION['sa_user']) . ')';
-    echo '</script>';
+    else {
+        $_SESSION['sa_error'] = 'Invalid user role';
+        wp_redirect(home_url('/login'));
+        exit;
+    }
     //wp_redirect(home_url());
     //exit;
 }
