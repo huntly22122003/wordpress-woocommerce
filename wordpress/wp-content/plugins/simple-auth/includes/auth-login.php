@@ -53,13 +53,19 @@ function sa_handle_login()
     $_SESSION['sa_user'] = [
         'id' => $user['id'],
         'username' => $user['username'],
-        'email' => $user['email']
+        'email' => $user['email'],
+        'wp_user_id' => $user['wp_user_id'],
     ];
+    $wp_user_id = (int) ($_SESSION['sa_user']['wp_user_id'] ?? 0);
 
     error_log('LOGIN SUCCESS');
     error_log(print_r($_SESSION['sa_user'], true));
     if ($user['role'] === 'admin') {
     wp_redirect(home_url('/admin'));
+    exit;
+    }
+    if ($user['role'] === 'user') {
+    wp_redirect(home_url('/simple-order'));
     exit;
     }
     
