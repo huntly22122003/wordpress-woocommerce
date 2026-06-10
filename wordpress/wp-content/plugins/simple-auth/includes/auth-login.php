@@ -45,10 +45,6 @@ function sa_handle_login()
         exit;
     }
 
-    if (!session_id()) {
-        session_start();
-    }
-
     $_SESSION['sa_user'] = [
         'id' => $user['id'],
         'username' => $user['username'],
