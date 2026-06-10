@@ -12,6 +12,11 @@ class SO_Loader
 
         add_action('init', [$this, 'add_rewrite_rules']);
         add_filter('query_vars', [$this, 'add_query_vars']);
+        add_action('init', function () {
+            if (isset($_GET['sa_logout'])) {
+                sa_logout();
+        }
+        });
 
         add_action(
             'template_redirect',
@@ -28,6 +33,7 @@ class SO_Loader
 
     private function includes()
     {
+        require_once plugin_dir_path(__FILE__) . '../../simple-auth/includes/auth-logout.php';
         require_once plugin_dir_path(__FILE__) . 'class-so-product.php';
         require_once plugin_dir_path(__FILE__) . 'class-so-cart.php';
         require_once plugin_dir_path(__FILE__) . 'class-so-order.php';

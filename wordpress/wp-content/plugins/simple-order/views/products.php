@@ -10,4 +10,9 @@ $products = wc_get_products(['limit' => 20]);
     </div>
 <?php endforeach; ?>
 
+
 <a href="<?= home_url('/simple-order/cart'); ?>">Go Cart</a>
+<a href="<?php echo home_url('/?sa_logout=1'); ?>" 
+   style="display:inline-block;margin-top:20px;padding:10px 15px;background:red;color:#fff;text-decoration:none;border-radius:6px;">
+    Logout
+</a>
