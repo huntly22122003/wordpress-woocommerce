@@ -414,3 +414,357 @@
     [email] => lynguyenquochung22122003@gmail.com
 )
 
+[09-Jun-2026 07:38:26 UTC] === LOGIN REQUEST ===
+[09-Jun-2026 07:38:26 UTC] Email: truongthangloi2003@gmail.com
+[09-Jun-2026 07:38:26 UTC] User found ID: 7
+[09-Jun-2026 07:38:26 UTC] LOGIN SUCCESS
+[09-Jun-2026 07:38:26 UTC] Array
+(
+    [id] => 7
+    [username] => loi
+    [email] => truongthangloi2003@gmail.com
+)
+
+[09-Jun-2026 08:53:18 UTC] === MAIL DEBUG START ===
+[09-Jun-2026 08:53:18 UTC] Class: WPMailSMTP\MailCatcherV6
+[09-Jun-2026 08:53:18 UTC] Mailer: mail
+[09-Jun-2026 08:53:18 UTC] Host: localhost
+[09-Jun-2026 08:53:18 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
+            [line] => 38
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
+            [line] => 44
+            [function] => sa_send_otp_email
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => sa_handle_register
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-settings.php
+            [line] => 771
+            [function] => do_action
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-config.php
+            [line] => 110
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-settings.php
+                )
+
+            [function] => require_once
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-load.php
+            [line] => 50
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-config.php
+                )
+
+            [function] => require_once
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 13
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-load.php
+                )
+
+            [function] => require_once
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
+        )
+
+)
+
+[09-Jun-2026 08:54:32 UTC] === LOGIN REQUEST ===
+[09-Jun-2026 08:54:32 UTC] Email: loitntse171276@fpt.edu.vn
+[09-Jun-2026 08:54:32 UTC] User found ID: 8
+[09-Jun-2026 08:54:32 UTC] INPUT PASSWORD: loi123456
+[09-Jun-2026 08:54:32 UTC] HASH IN DB: $2y$10$taAkQxpOQDwLIaP2E./08ujw4Eovwvo/Ato5WhqyxWHQttq77VISW
+[09-Jun-2026 08:54:33 UTC] PASSWORD FAIL
+[09-Jun-2026 08:54:33 UTC] false
+[09-Jun-2026 08:54:33 UTC] LOGIN FAILED: Wrong password
+[09-Jun-2026 08:54:51 UTC] === LOGIN REQUEST ===
+[09-Jun-2026 08:54:51 UTC] Email: loitntse171276@fpt.edu.vn
+[09-Jun-2026 08:54:51 UTC] User found ID: 8
+[09-Jun-2026 08:54:51 UTC] INPUT PASSWORD: loi123456
+[09-Jun-2026 08:54:51 UTC] HASH IN DB: $2y$10$taAkQxpOQDwLIaP2E./08ujw4Eovwvo/Ato5WhqyxWHQttq77VISW
+[09-Jun-2026 08:54:51 UTC] PASSWORD FAIL
+[09-Jun-2026 08:54:51 UTC] false
+[09-Jun-2026 08:54:51 UTC] LOGIN FAILED: Wrong password
+[09-Jun-2026 08:56:49 UTC] === MAIL DEBUG START ===
+[09-Jun-2026 08:56:49 UTC] Class: WPMailSMTP\MailCatcherV6
+[09-Jun-2026 08:56:49 UTC] Mailer: mail
+[09-Jun-2026 08:56:49 UTC] Host: localhost
+[09-Jun-2026 08:56:49 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
+            [line] => 38
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
+            [line] => 44
+            [function] => sa_send_otp_email
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => sa_handle_register
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-settings.php
+            [line] => 771
+            [function] => do_action
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-config.php
+            [line] => 110
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-settings.php
+                )
+
+            [function] => require_once
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-load.php
+            [line] => 50
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-config.php
+                )
+
+            [function] => require_once
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 13
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-load.php
+                )
+
+            [function] => require_once
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
+        )
+
+)
+
+[09-Jun-2026 08:57:49 UTC] === LOGIN REQUEST ===
+[09-Jun-2026 08:57:49 UTC] Email: hoabinnh192008@gmail.com
+[09-Jun-2026 08:57:49 UTC] LOGIN FAILED: User not found
+[09-Jun-2026 08:58:16 UTC] === LOGIN REQUEST ===
+[09-Jun-2026 08:58:16 UTC] Email: hoabinh192008@gmail.com
+[09-Jun-2026 08:58:16 UTC] User found ID: 9
+[09-Jun-2026 08:58:16 UTC] LOGIN SUCCESS
+[09-Jun-2026 08:58:16 UTC] Array
+(
+    [id] => 9
+    [username] => hoabinh192008@gmail.com
+    [email] => hoabinh192008@gmail.com
+)
+
+[09-Jun-2026 09:00:08 UTC] === LOGIN REQUEST ===
+[09-Jun-2026 09:00:08 UTC] Email: hoabinh192008@gmail.com
+[09-Jun-2026 09:00:08 UTC] User found ID: 9
+[09-Jun-2026 09:00:08 UTC] LOGIN SUCCESS
+[09-Jun-2026 09:00:08 UTC] Array
+(
+    [id] => 9
+    [username] => hoabinh192008@gmail.com
+    [email] => hoabinh192008@gmail.com
+)
+
+[10-Jun-2026 07:07:24 UTC] PHP Warning:  Attempt to read property "query_vars" on null in /var/www/html/wp-includes/template.php on line 785
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function wp_register_style was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. This notice was triggered by the <code>wp-img-auto-sizes-contain</code> handle. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function wp_add_inline_style was called <strong>incorrectly</strong>. Scripts and styles should not be registered or enqueued until the <code>wp_enqueue_scripts</code>, <code>admin_enqueue_scripts</code>, or <code>login_enqueue_scripts</code> hooks. This notice was triggered by the <code>wp-img-auto-sizes-contain</code> handle. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.3.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function is_feed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function is_embed was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function is_search was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Notice:  Function is_preview was called <strong>incorrectly</strong>. Conditional query tags do not work before the query is run. Before then, they always return false. Please see <a href="https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/">Debugging in WordPress</a> for more information. (This message was added in version 3.1.0.) in /var/www/html/wp-includes/functions.php on line 6170
+[10-Jun-2026 07:07:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_queried_object() on null in /var/www/html/wp-includes/query.php:45
+Stack trace:
+#0 /var/www/html/wp-includes/general-template.php(3350): get_queried_object()
+#1 /var/www/html/wp-includes/class-wp-hook.php(341): feed_links_extra(Array)
+#2 /var/www/html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#3 /var/www/html/wp-includes/plugin.php(522): WP_Hook->do_action(Array)
+#4 /var/www/html/wp-includes/general-template.php(3208): do_action('wp_head')
+#5 /var/www/html/wp-content/themes/storefront/header.php(18): wp_head()
+#6 /var/www/html/wp-includes/template.php(814): require_once('/var/www/html/w...')
+#7 /var/www/html/wp-includes/template.php(749): load_template('/var/www/html/w...', true, Array)
+#8 /var/www/html/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#9 /var/www/html/wp-content/plugins/welcome-page/views/frontpage.php(3): get_header()
+#10 /var/www/html/wp-content/plugins/welcome-page/welcomepage.php(9): require('/var/www/html/w...')
+#11 /var/www/html/wp-settings.php(589): include_once('/var/www/html/w...')
+#12 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#13 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#14 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...')
+#15 /var/www/html/index.php(17): require('/var/www/html/w...')
+#16 {main}
+  thrown in /var/www/html/wp-includes/query.php on line 45
