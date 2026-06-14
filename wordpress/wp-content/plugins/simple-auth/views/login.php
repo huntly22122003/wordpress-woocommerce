@@ -2,12 +2,6 @@
 // Xử lý login
 $login_error = sa_handle_login();
 ?>
-<?php if (!empty($_SESSION['sa_error'])): ?>
-<script>
-    alert(<?php echo json_encode($_SESSION['sa_error']); ?>);
-</script>
-<?php unset($_SESSION['sa_error']); ?>
-<?php endif; ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -69,12 +63,18 @@ $login_error = sa_handle_login();
                                 <input type="checkbox" name="remember_me">
                                 <span>Ghi nhớ đăng nhập</span>
                             </label>
-                            <a href="#" class="forgot" id="flipToRegisterBtn">Chưa có tài khoản? Đăng ký</a>
+                            <!-- SỬA LINK QUÊN MẬT KHẨU -->
+                            <a href="#" class="forgot" id="forgotPasswordBtn">Quên mật khẩu?</a>
                         </div>
                         
-                        <button type="submit" name="sa_login_submit" class="btn-login">
-                            <i class="fas fa-plug"></i> Đăng nhập
-                        </button>
+                        <div class="form-actions">
+                            <button type="submit" name="sa_login_submit" class="btn-login">
+                                <i class="fas fa-plug"></i> Đăng nhập
+                            </button>
+                            <button type="button" class="btn-register" id="flipToRegisterBtn">
+                                <i class="fas fa-user-plus"></i> Đăng ký
+                            </button>
+                        </div>
                         
                         <?php if ($login_error): ?>
                         <div class="message error">
@@ -124,9 +124,16 @@ $login_error = sa_handle_login();
             setTimeout(() => { window.location.href = targetUrl; }, 400);
         }
         
+        // Nút đăng ký
         document.getElementById('flipToRegisterBtn')?.addEventListener('click', function(e) {
             e.preventDefault();
-            transitionTo('http://localhost/sa-register/');
+            transitionTo('/sa-register/');
+        });
+        
+        // Nút quên mật khẩu - CHUYỂN HƯỚNG ĐÚNG
+        document.getElementById('forgotPasswordBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            transitionTo('/sa-forgot/');
         });
         
         window.addEventListener('load', function() {
@@ -135,10 +142,14 @@ $login_error = sa_handle_login();
             setTimeout(() => mainContent.classList.remove('fade-in'), 500);
         });
         
-        const link = document.createElement('link');
-        link.rel = 'prefetch';
-        link.href = 'http://localhost/sa-register/';
-        document.head.appendChild(link);
+        // Prefetch các trang
+        const links = ['/sa-register/', '/sa-forgot/'];
+        links.forEach(link => {
+            const linkTag = document.createElement('link');
+            linkTag.rel = 'prefetch';
+            linkTag.href = link;
+            document.head.appendChild(linkTag);
+        });
     </script>
 </body>
 </html>

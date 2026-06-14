@@ -43,3 +43,5 @@ CREATE TABLE `otp_sessions` (
 
 ALTER TABLE users
 ADD wp_user_id BIGINT NULL;
+
+cmd /c "docker exec -i mysql mysql -u root -prootpassword --default-character-set=utf8mb4 wordpress < wordpress_final.sql" 

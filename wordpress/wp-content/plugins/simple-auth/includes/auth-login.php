@@ -42,7 +42,7 @@ function sa_handle_login()
     if (!password_verify($password, $user['password'])) {
         $_SESSION['sa_error'] = 'Wrong password';
         wp_redirect(home_url('/sa-login'));
-        exit;
+        exit;   
     }
 
     $_SESSION['sa_user'] = [
@@ -53,14 +53,37 @@ function sa_handle_login()
     ];
     $wp_user_id = (int) ($_SESSION['sa_user']['wp_user_id'] ?? 0);
 
+    /**
+     * Login WordPress bằng wp_user_id
+     */
+    if ($wp_user_id > 0) {
+
+        $wp_user = get_user_by('id', $wp_user_id);
+
+        if (!$wp_user) {
+            $_SESSION['sa_error'] = 'Linked WordPress user not found';
+            wp_redirect(home_url('/sa-login'));
+            exit;
+        }
+
+        wp_set_current_user($wp_user_id);
+        wp_set_auth_cookie($wp_user_id, true);
+
+        do_action(
+            'wp_login',
+            $wp_user->user_login,
+            $wp_user
+        );
+    }
     error_log('LOGIN SUCCESS');
     error_log(print_r($_SESSION['sa_user'], true));
+    error_log(print_r(wp_get_current_user()->roles, true));
     if ($user['role'] === 'admin') {
     wp_redirect(home_url('/wp-admin'));
     exit;
     }
     else if ($user['role'] === 'user') {
-    wp_redirect(home_url('/simple-order'));
+    wp_redirect(home_url('/'));
     exit;
     }
     else {
