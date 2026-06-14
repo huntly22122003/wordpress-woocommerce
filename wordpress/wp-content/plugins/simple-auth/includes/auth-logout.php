@@ -1,23 +1,31 @@
 <?php
 function sa_logout()
 {
-    if (!session_id()) {
+    wp_logout();
+
+    // Xử lý session custom
+    if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
 
-    // Xoá toàn bộ session user
     unset($_SESSION['sa_user']);
     unset($_SESSION['sa_error']);
 
-    // hoặc destroy sạch luôn session
     session_destroy();
 
-    // (optional) xoá cookie session PHP
-    if (ini_get("session.use_cookies")) {
+    // Xóa cookie PHPSESSID
+    if (ini_get('session.use_cookies')) {
+
         $params = session_get_cookie_params();
-        setcookie(session_name(), '', time() - 42000,
-            $params["path"], $params["domain"],
-            $params["secure"], $params["httponly"]
+
+        setcookie(
+            session_name(),
+            '',
+            time() - 42000,
+            $params['path'],
+            $params['domain'],
+            $params['secure'],
+            $params['httponly']
         );
     }
 

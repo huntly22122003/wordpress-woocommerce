@@ -74,4 +74,9 @@ function sa_template_loader() {
     }
 }
 
+add_action('wp_logout', 'sa_logout_session');
+
+add_filter('logout_redirect', function () {
+    return home_url('/sa-login');
+});
 add_action('template_redirect', 'sa_template_loader');
