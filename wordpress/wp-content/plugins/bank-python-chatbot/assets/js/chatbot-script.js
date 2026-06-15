@@ -1,4 +1,4 @@
-// Bank Python Chatbot - Main JavaScript
+// Bank Python Chatbot - Main JavaScript (Dark Theme)
 (function($) {
     'use strict';
     
@@ -153,7 +153,7 @@
         }
     };
     
-    // ===== THÊM HÀM XOÁ LỊCH SỬ CHAT =====
+    // Hàm xóa lịch sử chat
     window.clearChatHistory = function() {
         if (confirm('🗑️ Bạn có chắc chắn muốn xoá toàn bộ lịch sử chat?')) {
             // Xoá localStorage
@@ -181,14 +181,13 @@
             alert('✅ Đã xoá lịch sử chat!');
         }
     };
-    // ===== KẾT THÚC THÊM HÀM XOÁ =====
     
     // Khởi tạo chatbot cho một instance
     window.initChatbot = function(title) {
         const input = document.getElementById('bpc-message-input');
         const sendBtn = document.getElementById('bpc-send-btn');
         
-        // ===== THÊM XỬ LÝ NÚT XOÁ =====
+        // Xử lý nút xóa
         const clearBtn = document.getElementById('bpcClearChatBtn');
         if (clearBtn) {
             clearBtn.onclick = function(e) {
@@ -196,7 +195,6 @@
                 window.clearChatHistory();
             };
         }
-        // ===== KẾT THÚC THÊM =====
         
         if (!input || !sendBtn) return;
         
@@ -229,6 +227,22 @@
         // Focus vào input
         input.focus();
     };
+    
+    // Thêm nút xóa vào header
+    function addClearButtonToHeader() {
+        const header = document.querySelector('.bpc-chat-header .bpc-header-content');
+        if (header && !document.querySelector('.bpc-clear-chat-btn')) {
+            const clearBtn = document.createElement('button');
+            clearBtn.innerHTML = '🗑️';
+            clearBtn.className = 'bpc-clear-chat-btn';
+            clearBtn.title = 'Xóa lịch sử chat';
+            clearBtn.onclick = function(e) {
+                e.stopPropagation();
+                window.clearChatHistory();
+            };
+            header.appendChild(clearBtn);
+        }
+    }
     
     // Khởi tạo floating button
     $(document).ready(function() {
@@ -263,6 +277,9 @@
                 });
             }
         }
+        
+        // Thêm nút xóa vào header
+        setTimeout(addClearButtonToHeader, 100);
     });
     
     // Product support button

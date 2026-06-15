@@ -1,8 +1,44 @@
-[15-Jun-2026 04:06:39 UTC] === MAIL DEBUG START ===
-[15-Jun-2026 04:06:39 UTC] Class: WPMailSMTP\MailCatcherV6
-[15-Jun-2026 04:06:39 UTC] Mailer: mail
-[15-Jun-2026 04:06:39 UTC] Host: localhost
-[15-Jun-2026 04:06:39 UTC] Array
+[15-Jun-2026 06:08:18 UTC] === LOGIN REQUEST ===
+[15-Jun-2026 06:08:18 UTC] Email: truongthangloi2003@gmail.com
+[15-Jun-2026 06:08:18 UTC] User found ID: 7
+[15-Jun-2026 06:08:18 UTC] LOGIN SUCCESS
+[15-Jun-2026 06:08:18 UTC] Array
+(
+    [id] => 7
+    [username] => loi
+    [email] => truongthangloi2003@gmail.com
+    [wp_user_id] => 
+)
+
+[15-Jun-2026 06:08:18 UTC] Array
+(
+)
+
+[15-Jun-2026 06:08:46 UTC] === LOGIN REQUEST ===
+[15-Jun-2026 06:08:46 UTC] Email: hoabinh192008@gmail.com
+[15-Jun-2026 06:08:46 UTC] User found ID: 9
+[15-Jun-2026 06:08:59 UTC] === LOGIN REQUEST ===
+[15-Jun-2026 06:08:59 UTC] Email: gunviet123@gmail.com
+[15-Jun-2026 06:08:59 UTC] User found ID: 10
+[15-Jun-2026 06:08:59 UTC] LOGIN SUCCESS
+[15-Jun-2026 06:08:59 UTC] Array
+(
+    [id] => 10
+    [username] => gunviet123@gmail.com
+    [email] => gunviet123@gmail.com
+    [wp_user_id] => 4
+)
+
+[15-Jun-2026 06:08:59 UTC] Array
+(
+    [0] => customer
+)
+
+[15-Jun-2026 06:10:15 UTC] === MAIL DEBUG START ===
+[15-Jun-2026 06:10:15 UTC] Class: WPMailSMTP\MailCatcherV6
+[15-Jun-2026 06:10:15 UTC] Mailer: mail
+[15-Jun-2026 06:10:15 UTC] Host: localhost
+[15-Jun-2026 06:10:15 UTC] Array
 (
     [0] => Array
         (
@@ -38,23 +74,27 @@
 
     [4] => Array
         (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email.php
+            [line] => 1136
             [function] => wp_mail
         )
 
     [5] => Array
         (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-register.php
-            [line] => 44
-            [function] => sa_send_otp_email
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email-new-order.php
+            [line] => 127
+            [function] => send
+            [class] => WC_Email
+            [type] => ->
         )
 
     [6] => Array
         (
             [file] => /var/www/html/wp-includes/class-wp-hook.php
             [line] => 341
-            [function] => sa_handle_register
+            [function] => trigger
+            [class] => WC_Email_New_Order
+            [type] => ->
         )
 
     [7] => Array
@@ -69,7 +109,7 @@
     [8] => Array
         (
             [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 522
+            [line] => 570
             [function] => do_action
             [class] => WP_Hook
             [type] => ->
@@ -77,48 +117,263 @@
 
     [9] => Array
         (
-            [file] => /var/www/html/wp-settings.php
-            [line] => 771
-            [function] => do_action
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-emails.php
+            [line] => 219
+            [function] => do_action_ref_array
         )
 
     [10] => Array
         (
-            [file] => /var/www/html/wp-config.php
-            [line] => 110
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-settings.php
-                )
-
-            [function] => require_once
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => send_transactional_email
+            [class] => WC_Emails
+            [type] => ::
         )
 
     [11] => Array
         (
-            [file] => /var/www/html/wp-load.php
-            [line] => 50
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-config.php
-                )
-
-            [function] => require_once
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
         )
 
     [12] => Array
         (
-            [file] => /var/www/html/wp-blog-header.php
-            [line] => 13
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-load.php
-                )
-
-            [function] => require_once
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
         )
 
     [13] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 476
+            [function] => do_action
+        )
+
+    [14] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 285
+            [function] => status_transition
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [15] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 183
+            [function] => save
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [16] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/abstracts/abstract-wc-stripe-payment-gateway.php
+            [line] => 661
+            [function] => payment_complete
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [17] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1640
+            [function] => process_response
+            [class] => WC_Stripe_Payment_Gateway
+            [type] => ->
+        )
+
+    [18] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1405
+            [function] => process_payment_with_payment_method
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [19] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1390
+            [function] => process_payment_with_deferred_intent
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [20] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Legacy.php
+            [line] => 56
+            [function] => process_payment
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [21] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => process_legacy_payment
+            [class] => Automattic\WooCommerce\StoreApi\Legacy
+            [type] => ->
+        )
+
+    [22] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [23] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [24] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Utilities/CheckoutTrait.php
+            [line] => 82
+            [function] => do_action_ref_array
+        )
+
+    [25] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 557
+            [function] => process_payment
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [26] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php
+            [line] => 119
+            [function] => get_route_post_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [27] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 158
+            [function] => get_response_by_request_method
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\AbstractRoute
+            [type] => ->
+        )
+
+    [28] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1287
+            [function] => get_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [29] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1120
+            [function] => respond_to_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [30] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 435
+            [function] => dispatch
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [31] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api.php
+            [line] => 471
+            [function] => serve_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [32] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => rest_api_loaded
+        )
+
+    [33] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [34] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [35] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 418
+            [function] => do_action_ref_array
+        )
+
+    [36] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 821
+            [function] => parse_request
+            [class] => WP
+            [type] => ->
+        )
+
+    [37] => Array
+        (
+            [file] => /var/www/html/wp-includes/functions.php
+            [line] => 1343
+            [function] => main
+            [class] => WP
+            [type] => ->
+        )
+
+    [38] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 16
+            [function] => wp
+        )
+
+    [39] => Array
         (
             [file] => /var/www/html/index.php
             [line] => 17
@@ -132,14 +387,356 @@
 
 )
 
-[15-Jun-2026 04:07:41 UTC] === LOGIN REQUEST ===
-[15-Jun-2026 04:07:41 UTC] Email: gunviet123@gmail.com
-[15-Jun-2026 04:07:41 UTC] User found ID: 10
-[15-Jun-2026 04:07:41 UTC] LOGIN SUCCESS
-[15-Jun-2026 04:07:41 UTC] Array
+[15-Jun-2026 06:10:19 UTC] === MAIL DEBUG START ===
+[15-Jun-2026 06:10:19 UTC] Class: WPMailSMTP\MailCatcherV6
+[15-Jun-2026 06:10:19 UTC] Mailer: mail
+[15-Jun-2026 06:10:19 UTC] Host: smtp.gmail.com
+[15-Jun-2026 06:10:19 UTC] Array
 (
-    [id] => 10
-    [username] => gunviet123@gmail.com
-    [email] => gunviet123@gmail.com
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email.php
+            [line] => 1136
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email-customer-processing-order.php
+            [line] => 103
+            [function] => send
+            [class] => WC_Email
+            [type] => ->
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => trigger
+            [class] => WC_Email_Customer_Processing_Order
+            [type] => ->
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-emails.php
+            [line] => 219
+            [function] => do_action_ref_array
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => send_transactional_email
+            [class] => WC_Emails
+            [type] => ::
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 476
+            [function] => do_action
+        )
+
+    [14] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 285
+            [function] => status_transition
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [15] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 183
+            [function] => save
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [16] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/abstracts/abstract-wc-stripe-payment-gateway.php
+            [line] => 661
+            [function] => payment_complete
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [17] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1640
+            [function] => process_response
+            [class] => WC_Stripe_Payment_Gateway
+            [type] => ->
+        )
+
+    [18] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1405
+            [function] => process_payment_with_payment_method
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [19] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1390
+            [function] => process_payment_with_deferred_intent
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [20] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Legacy.php
+            [line] => 56
+            [function] => process_payment
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [21] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => process_legacy_payment
+            [class] => Automattic\WooCommerce\StoreApi\Legacy
+            [type] => ->
+        )
+
+    [22] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [23] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [24] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Utilities/CheckoutTrait.php
+            [line] => 82
+            [function] => do_action_ref_array
+        )
+
+    [25] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 557
+            [function] => process_payment
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [26] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php
+            [line] => 119
+            [function] => get_route_post_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [27] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 158
+            [function] => get_response_by_request_method
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\AbstractRoute
+            [type] => ->
+        )
+
+    [28] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1287
+            [function] => get_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [29] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1120
+            [function] => respond_to_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [30] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 435
+            [function] => dispatch
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [31] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api.php
+            [line] => 471
+            [function] => serve_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [32] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => rest_api_loaded
+        )
+
+    [33] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [34] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [35] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 418
+            [function] => do_action_ref_array
+        )
+
+    [36] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 821
+            [function] => parse_request
+            [class] => WP
+            [type] => ->
+        )
+
+    [37] => Array
+        (
+            [file] => /var/www/html/wp-includes/functions.php
+            [line] => 1343
+            [function] => main
+            [class] => WP
+            [type] => ->
+        )
+
+    [38] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 16
+            [function] => wp
+        )
+
+    [39] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
+        )
+
 )
 
