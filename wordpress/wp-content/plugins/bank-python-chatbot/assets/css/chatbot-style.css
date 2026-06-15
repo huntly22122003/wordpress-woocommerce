@@ -1,0 +1,433 @@
+/* ===== BANK PYTHON CHATBOT - COMPLETE CSS ===== */
+
+/* Main Chatbot Container - FIXED SIZE */
+.bpc-chatbot-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    width: 380px !important;
+    height: 550px !important;
+    position: relative;
+    z-index: 999999;
+}
+
+/* Floating mode - Container bên ngoài */
+.bpc-floating-trigger {
+    position: fixed;
+    z-index: 999999;
+    cursor: pointer;
+}
+
+.bpc-floating-trigger[data-position="bottom-right"] {
+    bottom: 20px;
+    right: 20px;
+}
+
+.bpc-floating-trigger[data-position="bottom-left"] {
+    bottom: 20px;
+    left: 20px;
+}
+
+/* Floating Button */
+.bpc-floating-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.bpc-floating-button:hover {
+    transform: scale(1.1);
+}
+
+.bpc-floating-icon {
+    font-size: 28px;
+}
+
+.bpc-floating-text {
+    position: absolute;
+    right: 70px;
+    background: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.bpc-floating-button:hover .bpc-floating-text {
+    display: block;
+}
+
+.bpc-notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Chat Header */
+.bpc-chat-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 15px 20px;
+    flex-shrink: 0;
+}
+
+.bpc-header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bpc-icon {
+    font-size: 28px;
+}
+
+.bpc-header-text {
+    flex: 1;
+}
+
+.bpc-header-text h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bpc-status {
+    font-size: 11px;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 3px;
+}
+
+.bpc-status-dot {
+    width: 8px;
+    height: 8px;
+    background: #4caf50;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.bpc-minimize-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0 8px;
+    transition: transform 0.2s;
+}
+
+.bpc-minimize-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Chat Messages Area */
+.bpc-chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 0;
+}
+
+.bpc-message {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bpc-message.user {
+    justify-content: flex-end;
+}
+
+.bpc-message.bot {
+    justify-content: flex-start;
+}
+
+.bpc-message-content {
+    max-width: 85%;
+    padding: 10px 16px;
+    border-radius: 18px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+.user .bpc-message-content {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.bot .bpc-message-content {
+    background: white;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    border-bottom-left-radius: 4px;
+}
+
+/* Typing Indicator */
+.bpc-typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 10px 16px;
+    background: white;
+    border-radius: 18px;
+    width: fit-content;
+}
+
+.bpc-typing-indicator span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #999;
+    animation: typing 1.4s infinite;
+}
+
+.bpc-typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bpc-typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    30% {
+        transform: translateY(-8px);
+        opacity: 1;
+    }
+}
+
+/* Input Area */
+.bpc-chat-input-area {
+    padding: 15px 20px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.bpc-input-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.bpc-message-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 14px;
+    resize: none;
+    max-height: 100px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.bpc-message-input:focus {
+    border-color: #2a5298;
+}
+
+.bpc-send-btn {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.bpc-send-btn:hover {
+    transform: scale(1.05);
+}
+
+.bpc-send-btn:active {
+    transform: scale(0.95);
+}
+
+.bpc-input-footer {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.bpc-powered-by {
+    font-size: 10px;
+    color: #999;
+}
+
+/* Minimized State */
+.bpc-chatbot-container.minimized {
+    height: 60px !important;
+    overflow: hidden;
+}
+
+.bpc-chatbot-container.minimized .bpc-chat-messages,
+.bpc-chatbot-container.minimized .bpc-chat-input-area {
+    display: none;
+}
+
+/* Scrollbar */
+.bpc-chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.bpc-chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.bpc-chat-messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.bpc-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Product Page */
+.bpc-product-chat {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* ===== FIX: KHÔNG TRÀN MÀN HÌNH ===== */
+
+/* Fix container cha floating */
+div[style*="position: fixed"] {
+    width: auto !important;
+    background: transparent !important;
+    pointer-events: none;
+}
+
+div[style*="position: fixed"] .bpc-chatbot-container {
+    pointer-events: auto;
+}
+
+/* Responsive Desktop - Giữ kích thước cố định */
+@media (min-width: 769px) {
+    .bpc-chatbot-container {
+        width: 380px !important;
+        height: 550px !important;
+        max-width: none !important;
+    }
+}
+
+/* Responsive Tablet */
+@media (max-width: 768px) and (min-width: 481px) {
+    .bpc-chatbot-container {
+        width: 350px !important;
+        height: 500px !important;
+    }
+}
+
+/* Responsive Mobile - Full màn hình */
+@media (max-width: 480px) {
+    .bpc-chatbot-container {
+        width: 100vw !important;
+        height: 100vh !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        border-radius: 0 !important;
+        z-index: 999999 !important;
+    }
+    
+    .bpc-floating-button {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .bpc-floating-icon {
+        font-size: 24px;
+    }
+    
+    .bpc-chat-header {
+        padding: 12px 15px;
+    }
+    
+    .bpc-chat-messages {
+        padding: 15px;
+    }
+    
+    .bpc-chat-input-area {
+        padding: 12px 15px;
+    }
+}
+
+/* Animation cho chat window mở/đóng */
+.bpc-chatbot-container {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Fix cho message không bị tràn text */
+.bpc-message-content {
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* Đảm bảo input không bị tràn */
+.bpc-input-wrapper {
+    width: 100%;
+}
+
+.bpc-message-input {
+    width: calc(100% - 50px);
+}   
