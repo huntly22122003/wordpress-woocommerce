@@ -62,7 +62,7 @@ function sa_handle_login()
 
         if (!$wp_user) {
             $_SESSION['sa_error'] = 'Linked WordPress user not found';
-            wp_redirect(home_url('/sa-login'));
+            wp_redirect(home_url('/sa-login/'));
             exit;
         }
 

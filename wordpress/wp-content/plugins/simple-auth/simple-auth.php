@@ -23,6 +23,7 @@ require_once plugin_dir_path(__FILE__) . 'includes/helpers.php';
 require_once plugin_dir_path(__FILE__) . 'includes/auth-otp.php';
 require_once plugin_dir_path(__FILE__) . 'includes/auth-forgot.php';
 require_once plugin_dir_path(__FILE__) . 'includes/auth-otp-forgot.php';
+require_once plugin_dir_path(__FILE__) . 'includes/auth-voucher.php';
 /**
  * REWRITE ROUTES
  */
@@ -77,7 +78,7 @@ function sa_template_loader() {
 add_action('wp_logout', 'sa_logout_session');
 
 add_filter('logout_redirect', function () {
-    return home_url('/sa-login');
+    return home_url('/sa-login/');
 });
 add_action('wp_head', function () {
     if (is_wc_endpoint_url('edit-account')) {
@@ -88,4 +89,63 @@ add_action('wp_head', function () {
         </style>';
     }
 });
+add_action('wp_ajax_apply_coupon', 'apply_coupon_handler');
+add_action('wp_ajax_nopriv_apply_coupon', 'apply_coupon_handler');
+
+function apply_coupon_handler()
+{
+    if (
+        !isset($_POST['nonce']) ||
+        !wp_verify_nonce($_POST['nonce'], 'apply_coupon_nonce')
+    ) {
+        wp_send_json_error([
+            'message' => 'Invalid nonce'
+        ]);
+    }
+
+    $code = sanitize_text_field(
+        $_POST['coupon_code'] ?? ''
+    );
+
+    if (!$code) {
+        wp_send_json_error([
+            'message' => 'Coupon rỗng'
+        ]);
+    }
+
+    if (!WC()->cart) {
+        wc_load_cart();
+    }
+
+    $result = WC()->cart->apply_coupon($code);
+
+    if ($result) {
+
+        WC()->cart->calculate_totals();
+
+        wp_send_json_success([
+            'message' => 'Áp dụng thành công'
+        ]);
+    }
+
+    wp_send_json_error([
+        'message' => 'Coupon không hợp lệ'
+    ]);
+}
+
+add_action('template_redirect', function () {
+
+    if (!is_page('my-account')) {
+        return;
+    }
+
+    if (!is_user_logged_in()) {
+
+        wp_redirect(home_url('/sa-login/'));
+        exit;
+
+    }
+
+});
+
 add_action('template_redirect', 'sa_template_loader');

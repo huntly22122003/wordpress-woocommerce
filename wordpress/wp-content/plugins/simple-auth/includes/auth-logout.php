@@ -29,7 +29,7 @@ function sa_logout()
         );
     }
 
-    wp_redirect(home_url('/sa-login'));
+    wp_redirect(home_url('/sa-login/'));
     exit;
 }
 ?>

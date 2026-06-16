@@ -1,180 +1,67 @@
-[15-Jun-2026 01:26:25 UTC] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/wp-content/plugins/ai-engine/classes/modules/files.php on line 881
-[15-Jun-2026 01:26:25 UTC] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/wp-content/plugins/ai-engine/classes/modules/files.php on line 885
-[15-Jun-2026 01:26:33 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:26:50 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:26:54 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:26:57 UTC] === MAIL DEBUG START ===
-[15-Jun-2026 01:26:57 UTC] Class: WPMailSMTP\MailCatcherV6
-[15-Jun-2026 01:26:57 UTC] Mailer: mail
-[15-Jun-2026 01:26:57 UTC] Host: localhost
-[15-Jun-2026 01:26:57 UTC] Array
+[15-Jun-2026 10:02:16 UTC] auth-voucher.php loaded
+[15-Jun-2026 10:03:37 UTC] auth-voucher.php loaded
+[15-Jun-2026 10:03:49 UTC] auth-voucher.php loaded
+[15-Jun-2026 10:04:00 UTC] auth-voucher.php loaded
+[15-Jun-2026 10:04:07 UTC] auth-voucher.php loaded
+[15-Jun-2026 10:04:12 UTC] auth-voucher.php loaded
+[15-Jun-2026 10:05:12 UTC] auth-voucher.php loaded
+[15-Jun-2026 10:05:38 UTC] === auth-voucher.php đã được load ===
+[15-Jun-2026 10:05:56 UTC] === auth-voucher.php đã được load ===
+[15-Jun-2026 10:06:05 UTC] === auth-voucher.php đã được load ===
+[15-Jun-2026 10:06:12 UTC] === auth-voucher.php đã được load ===
+[15-Jun-2026 10:06:12 UTC] === auth-voucher.php đã được load ===
+[15-Jun-2026 10:06:12 UTC] === auth-voucher.php đã được load ===
+[15-Jun-2026 10:06:16 UTC] === auth-voucher.php đã được load ===
+[15-Jun-2026 10:06:24 UTC] === auth-voucher.php đã được load ===
+[16-Jun-2026 00:45:41 UTC] PHP Warning:  translations_api(): Đã xảy ra lỗi không mong muốn. Có thể có sự cố với WordPress.org hoặc cấu hình của máy chủ. Nếu bạn tiếp tục gặp sự cố, vui lòng thử hỏi trong <a href="https://wordpress.org/support/forums/">diễn đàn hỗ trợ</a>. (WordPress không thể thiết lập kết nối an toàn tới WordPress.org. Vui lòng liên hệ quản trị máy chủ của bạn.) in /var/www/html/wp-includes/functions.php on line 6170
+[16-Jun-2026 02:38:33 UTC] === LOGIN REQUEST ===
+[16-Jun-2026 02:38:33 UTC] Email: lynguyenquochung22122003@gmail.com
+[16-Jun-2026 02:38:33 UTC] User found ID: 6
+[16-Jun-2026 02:38:33 UTC] LOGIN SUCCESS
+[16-Jun-2026 02:38:33 UTC] Array
 (
-    [0] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => {closure}
-        )
-
-    [1] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [2] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 570
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [3] => Array
-        (
-            [file] => /var/www/html/wp-includes/pluggable.php
-            [line] => 622
-            [function] => do_action_ref_array
-        )
-
-    [4] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
-            [line] => 38
-            [function] => wp_mail
-        )
-
-    [5] => Array
-        (
-            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-forgot.php
-            [line] => 30
-            [function] => sa_send_otp_email
-        )
-
-    [6] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 341
-            [function] => sa_handle_forgot_password
-        )
-
-    [7] => Array
-        (
-            [file] => /var/www/html/wp-includes/class-wp-hook.php
-            [line] => 365
-            [function] => apply_filters
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [8] => Array
-        (
-            [file] => /var/www/html/wp-includes/plugin.php
-            [line] => 522
-            [function] => do_action
-            [class] => WP_Hook
-            [type] => ->
-        )
-
-    [9] => Array
-        (
-            [file] => /var/www/html/wp-settings.php
-            [line] => 771
-            [function] => do_action
-        )
-
-    [10] => Array
-        (
-            [file] => /var/www/html/wp-config.php
-            [line] => 110
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-settings.php
-                )
-
-            [function] => require_once
-        )
-
-    [11] => Array
-        (
-            [file] => /var/www/html/wp-load.php
-            [line] => 50
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-config.php
-                )
-
-            [function] => require_once
-        )
-
-    [12] => Array
-        (
-            [file] => /var/www/html/wp-blog-header.php
-            [line] => 13
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-load.php
-                )
-
-            [function] => require_once
-        )
-
-    [13] => Array
-        (
-            [file] => /var/www/html/index.php
-            [line] => 17
-            [args] => Array
-                (
-                    [0] => /var/www/html/wp-blog-header.php
-                )
-
-            [function] => require
-        )
-
+    [id] => 6
+    [username] => 123
+    [email] => lynguyenquochung22122003@gmail.com
+    [wp_user_id] => 4
 )
 
-[15-Jun-2026 01:27:08 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:27:13 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:27:18 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:28:14 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:29:12 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:29:20 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:29:49 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:30:14 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:30:25 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:31:15 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:31:50 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:32:08 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:32:16 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:32:59 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:33:59 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:34:38 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:34:55 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:35:05 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:35:21 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:35:47 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:37:51 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:39:52 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:41:53 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 01:43:55 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:44:40 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:44:51 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:45:24 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:45:33 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:45:43 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:45:51 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:46:23 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:46:34 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:47:46 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:48:48 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:49:01 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:49:12 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:49:16 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:49:17 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:49:41 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:49:55 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
-[15-Jun-2026 05:50:03 UTC] [MWAI_WPAI_GATEWAY] registration failed: Interface "WordPress\AiClient\Providers\Models\TextGeneration\Contracts\TextGenerationModelInterface" not found @ /var/www/html/wp-content/plugins/ai-engine/labs/wpai-gateway-model.php:25
+[16-Jun-2026 02:38:33 UTC] Array
+(
+    [0] => customer
+)
+
+[16-Jun-2026 02:50:14 UTC] === LOGIN REQUEST ===
+[16-Jun-2026 02:50:14 UTC] Email: lynguyenquochung22122003@gmail.com
+[16-Jun-2026 02:50:14 UTC] User found ID: 6
+[16-Jun-2026 02:50:14 UTC] LOGIN SUCCESS
+[16-Jun-2026 02:50:14 UTC] Array
+(
+    [id] => 6
+    [username] => 123
+    [email] => lynguyenquochung22122003@gmail.com
+    [wp_user_id] => 4
+)
+
+[16-Jun-2026 02:50:14 UTC] Array
+(
+    [0] => customer
+)
+
+[16-Jun-2026 02:57:28 UTC] === LOGIN REQUEST ===
+[16-Jun-2026 02:57:28 UTC] Email: lynguyenquochung22122003@gmail.com
+[16-Jun-2026 02:57:28 UTC] User found ID: 6
+[16-Jun-2026 02:57:28 UTC] LOGIN SUCCESS
+[16-Jun-2026 02:57:28 UTC] Array
+(
+    [id] => 6
+    [username] => 123
+    [email] => lynguyenquochung22122003@gmail.com
+    [wp_user_id] => 4
+)
+
+[16-Jun-2026 02:57:28 UTC] Array
+(
+    [0] => customer
+)
+
