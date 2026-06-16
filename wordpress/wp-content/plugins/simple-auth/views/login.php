@@ -1,6 +1,11 @@
 <?php
 // Xử lý login
 $login_error = sa_handle_login();
+
+// Lấy URL gốc của site
+$site_url = home_url('/');
+$register_url = home_url('/sa-register/');
+$forgot_url = home_url('/sa-forgot/');
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -11,6 +16,42 @@ $login_error = sa_handle_login();
     <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__) . '../assets/css/style-login.css'; ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Thêm style cho nút đăng ký */
+        .form-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .btn-register {
+            width: 100%;
+            background: linear-gradient(95deg, #f0a34b, #e8891a);
+            border: none;
+            padding: 14px 20px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 6px 14px rgba(232, 137, 26, 0.25);
+        }
+        
+        .btn-register:hover {
+            background: linear-gradient(95deg, #f5b15a, #f09a2e);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(232, 137, 26, 0.35);
+        }
+        
+        .btn-register:active {
+            transform: translateY(0px);
+        }
+    </style>
 </head>
 <body>
     <div class="farm-wrapper" id="mainContent">
@@ -63,7 +104,6 @@ $login_error = sa_handle_login();
                                 <input type="checkbox" name="remember_me">
                                 <span>Ghi nhớ đăng nhập</span>
                             </label>
-                            <!-- SỬA LINK QUÊN MẬT KHẨU -->
                             <a href="#" class="forgot" id="forgotPasswordBtn">Quên mật khẩu?</a>
                         </div>
                         
@@ -98,6 +138,10 @@ $login_error = sa_handle_login();
     </div>
 
     <script>
+        // Biến toàn cục từ PHP
+        var registerUrl = '<?php echo $register_url; ?>';
+        var forgotUrl = '<?php echo $forgot_url; ?>';
+        
         function togglePassword() {
             var pwd = document.getElementById("password");
             var eye = document.querySelector(".toggle-eye i");
@@ -113,43 +157,100 @@ $login_error = sa_handle_login();
         }
         
         let isTransitioning = false;
+        
         function transitionTo(targetUrl) {
             if (isTransitioning) return;
+            if (!targetUrl || targetUrl === '#') {
+                console.error('Invalid URL:', targetUrl);
+                return;
+            }
+            
             isTransitioning = true;
-            document.getElementById('mainContent').classList.add('fade-out');
+            
+            // Thêm hiệu ứng fade out
+            const mainContent = document.getElementById('mainContent');
+            if (mainContent) {
+                mainContent.classList.add('fade-out');
+            }
+            
+            // Tạo lớp chuyển tiếp
             const transitionLayer = document.createElement('div');
             transitionLayer.className = 'page-transition';
             document.body.appendChild(transitionLayer);
+            
             setTimeout(() => transitionLayer.classList.add('active'), 10);
-            setTimeout(() => { window.location.href = targetUrl; }, 400);
+            
+            // Chuyển hướng sau hiệu ứng
+            setTimeout(() => { 
+                window.location.href = targetUrl; 
+            }, 400);
         }
         
-        // Nút đăng ký
-        document.getElementById('flipToRegisterBtn')?.addEventListener('click', function(e) {
-            e.preventDefault();
-            transitionTo('/sa-register/');
-        });
+        // Xử lý nút đăng ký với kiểm tra
+        const registerBtn = document.getElementById('flipToRegisterBtn');
+        if (registerBtn) {
+            registerBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Chuyển đến trang đăng ký:', registerUrl);
+                transitionTo(registerUrl);
+            });
+        }
         
-        // Nút quên mật khẩu - CHUYỂN HƯỚNG ĐÚNG
-        document.getElementById('forgotPasswordBtn')?.addEventListener('click', function(e) {
-            e.preventDefault();
-            transitionTo('/sa-forgot/');
-        });
+        // Xử lý nút quên mật khẩu
+        const forgotBtn = document.getElementById('forgotPasswordBtn');
+        if (forgotBtn) {
+            forgotBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Chuyển đến trang quên mật khẩu:', forgotUrl);
+                transitionTo(forgotUrl);
+            });
+        }
         
+        // Hiệu ứng fade in khi load trang
         window.addEventListener('load', function() {
             const mainContent = document.getElementById('mainContent');
-            mainContent.classList.add('fade-in');
-            setTimeout(() => mainContent.classList.remove('fade-in'), 500);
+            if (mainContent) {
+                mainContent.classList.add('fade-in');
+                setTimeout(() => mainContent.classList.remove('fade-in'), 500);
+            }
         });
         
-        // Prefetch các trang
-        const links = ['/sa-register/', '/sa-forgot/'];
-        links.forEach(link => {
-            const linkTag = document.createElement('link');
-            linkTag.rel = 'prefetch';
-            linkTag.href = link;
-            document.head.appendChild(linkTag);
-        });
+        // Prefetch các trang để tăng tốc độ
+        if ('IntersectionObserver' in window) {
+            const links = [registerUrl, forgotUrl];
+            links.forEach(link => {
+                if (link && link !== '#') {
+                    const linkTag = document.createElement('link');
+                    linkTag.rel = 'prefetch';
+                    linkTag.href = link;
+                    linkTag.as = 'document';
+                    document.head.appendChild(linkTag);
+                }
+            });
+        }
+        
+        // Xử lý form submit - giữ nguyên logic
+        const loginForm = document.querySelector('.login-form');
+        if (loginForm) {
+            loginForm.addEventListener('submit', function(e) {
+                const email = this.querySelector('input[name="email"]').value;
+                const password = this.querySelector('input[name="password"]').value;
+                
+                if (!email || !password) {
+                    e.preventDefault();
+                    alert('Vui lòng nhập đầy đủ email và mật khẩu');
+                    return false;
+                }
+                
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    e.preventDefault();
+                    alert('Vui lòng nhập email hợp lệ');
+                    return false;
+                }
+            });
+        }
     </script>
 </body>
 </html>

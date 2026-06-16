@@ -6,8 +6,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    /* Background nông trại - ruộng bậc thang xanh mướt */
-      background: linear-gradient(135deg, rgba(160, 100, 35, 0.85), rgba(120, 70, 25, 0.9)), 
+       background: linear-gradient(125deg, rgba(43, 110, 47, 0.92), rgba(26, 79, 29, 0.88)), 
                 url('https://images.pexels.com/photos/9137381/pexels-photo-9137381.jpeg');
     background-size: cover;
     background-position: center 30%;
