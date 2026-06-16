@@ -1,4 +1,4 @@
-// Bank Python Chatbot - Main JavaScript (Dark Theme)
+// Bank Python Chatbot - Main JavaScript (Dark Premium Cyberpunk Style)
 (function($) {
     'use strict';
     
@@ -148,7 +148,7 @@
             
             const minimizeBtn = document.querySelector('.bpc-minimize-btn');
             if (minimizeBtn) {
-                minimizeBtn.textContent = container.classList.contains('minimized') ? '+' : '−';
+                minimizeBtn.textContent = container.classList.contains('minimized') ? '✕' : '−';
             }
         }
     };
@@ -171,7 +171,7 @@
                 messagesContainer.innerHTML = `
                     <div class="bpc-message bot">
                         <div class="bpc-message-content">
-                            ${bpc_ajax.initial_message || 'Xin chào! Tôi là trợ lý ảo của ngân hàng. Tôi có thể giúp gì cho anh/chị hôm nay? 💁‍♂️'}
+                            ${bpc_ajax.initial_message || '🖤 Chào mừng bạn đến với hệ thống hỗ trợ. Tôi là trợ lý AI, sẵn sàng phục vụ bạn 24/7.'}
                         </div>
                     </div>
                 `;
@@ -250,8 +250,7 @@
         $('.bpc-floating-button').on('click', function() {
             const container = $('.bpc-chatbot-container');
             if (container.length === 0) {
-                // Nếu chưa có container, tạo mới
-                location.reload(); // Hoặc load dynamic
+                location.reload();
             } else {
                 container.toggleClass('minimized');
                 if (!container.hasClass('minimized')) {
@@ -271,7 +270,6 @@
             const messages = JSON.parse(history);
             const container = document.getElementById('bpc-messages');
             if (container) {
-                // Chỉ load 10 tin nhắn gần nhất
                 messages.slice(-10).forEach(msg => {
                     addMessage(msg.message, msg.sender, container);
                 });
@@ -289,7 +287,6 @@
         $('#bpc-message-input').val(message);
         sendChatMessage(message, 'bpc-messages');
         
-        // Scroll đến chatbot
         $('html, body').animate({
             scrollTop: $('.bpc-product-chat').offset().top - 100
         }, 500);

@@ -740,3 +740,1024 @@
 
 )
 
+[15-Jun-2026 08:42:55 UTC] PHP Fatal error:  Uncaught Error: Class "Farm_Fresh_Chatbot_Widget" not found in /var/www/html/wp-includes/class-wp-widget-factory.php:62
+Stack trace:
+#0 /var/www/html/wp-includes/widgets.php(123): WP_Widget_Factory->register('Farm_Fresh_Chat...')
+#1 /var/www/html/wp-content/plugins/bank-python-chatbot/bank-python-chatbot.php(247): register_widget('Farm_Fresh_Chat...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(341): Farm_Fresh_Chatbot->register_widget('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#4 /var/www/html/wp-includes/plugin.php(522): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-includes/widgets.php(1884): do_action('widgets_init')
+#6 /var/www/html/wp-includes/class-wp-hook.php(341): wp_widgets_init('')
+#7 /var/www/html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#8 /var/www/html/wp-includes/plugin.php(522): WP_Hook->do_action(Array)
+#9 /var/www/html/wp-settings.php(771): do_action('init')
+#10 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#11 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#12 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...')
+#13 /var/www/html/index.php(17): require('/var/www/html/w...')
+#14 {main}
+  thrown in /var/www/html/wp-includes/class-wp-widget-factory.php on line 62
+[15-Jun-2026 08:43:24 UTC] PHP Fatal error:  Uncaught Error: Class "Farm_Fresh_Chatbot_Widget" not found in /var/www/html/wp-includes/class-wp-widget-factory.php:62
+Stack trace:
+#0 /var/www/html/wp-includes/widgets.php(123): WP_Widget_Factory->register('Farm_Fresh_Chat...')
+#1 /var/www/html/wp-content/plugins/bank-python-chatbot/bank-python-chatbot.php(247): register_widget('Farm_Fresh_Chat...')
+#2 /var/www/html/wp-includes/class-wp-hook.php(341): Farm_Fresh_Chatbot->register_widget('')
+#3 /var/www/html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#4 /var/www/html/wp-includes/plugin.php(522): WP_Hook->do_action(Array)
+#5 /var/www/html/wp-includes/widgets.php(1884): do_action('widgets_init')
+#6 /var/www/html/wp-includes/class-wp-hook.php(341): wp_widgets_init('')
+#7 /var/www/html/wp-includes/class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#8 /var/www/html/wp-includes/plugin.php(522): WP_Hook->do_action(Array)
+#9 /var/www/html/wp-settings.php(771): do_action('init')
+#10 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#11 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#12 /var/www/html/wp-blog-header.php(13): require_once('/var/www/html/w...')
+#13 /var/www/html/index.php(17): require('/var/www/html/w...')
+#14 {main}
+  thrown in /var/www/html/wp-includes/class-wp-widget-factory.php on line 62
+[15-Jun-2026 08:58:41 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:58:41 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:58:41 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:58:46 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:58:47 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:58:47 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:58:47 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:59:19 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:59:19 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:59:19 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:59:19 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:59:43 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:59:43 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 08:59:43 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 09:05:13 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 09:05:14 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 09:05:14 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 09:08:13 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 09:08:13 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 09:08:13 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[15-Jun-2026 09:08:13 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 00:42:59 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 00:45:49 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 00:45:55 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 00:56:26 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 02:11:54 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 02:11:56 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 02:11:56 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:01:45 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:01:46 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:01:46 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:08:54 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:08:56 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:08:56 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:08:59 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:09:01 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:09:03 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:09:03 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:09:24 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:09:24 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:09:25 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:09:27 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:09:49 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:09:52 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:09:57 UTC] === MAIL DEBUG START ===
+[16-Jun-2026 03:09:57 UTC] Class: WPMailSMTP\MailCatcherV6
+[16-Jun-2026 03:09:57 UTC] Mailer: mail
+[16-Jun-2026 03:09:57 UTC] Host: localhost
+[16-Jun-2026 03:09:57 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email.php
+            [line] => 1136
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email-new-order.php
+            [line] => 127
+            [function] => send
+            [class] => WC_Email
+            [type] => ->
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => trigger
+            [class] => WC_Email_New_Order
+            [type] => ->
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-emails.php
+            [line] => 219
+            [function] => do_action_ref_array
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => send_transactional_email
+            [class] => WC_Emails
+            [type] => ::
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 476
+            [function] => do_action
+        )
+
+    [14] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 285
+            [function] => status_transition
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [15] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 183
+            [function] => save
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [16] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/abstracts/abstract-wc-stripe-payment-gateway.php
+            [line] => 661
+            [function] => payment_complete
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [17] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1640
+            [function] => process_response
+            [class] => WC_Stripe_Payment_Gateway
+            [type] => ->
+        )
+
+    [18] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1405
+            [function] => process_payment_with_payment_method
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [19] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1390
+            [function] => process_payment_with_deferred_intent
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [20] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Legacy.php
+            [line] => 56
+            [function] => process_payment
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [21] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => process_legacy_payment
+            [class] => Automattic\WooCommerce\StoreApi\Legacy
+            [type] => ->
+        )
+
+    [22] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [23] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [24] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Utilities/CheckoutTrait.php
+            [line] => 82
+            [function] => do_action_ref_array
+        )
+
+    [25] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 557
+            [function] => process_payment
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [26] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php
+            [line] => 119
+            [function] => get_route_post_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [27] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 158
+            [function] => get_response_by_request_method
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\AbstractRoute
+            [type] => ->
+        )
+
+    [28] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1287
+            [function] => get_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [29] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1120
+            [function] => respond_to_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [30] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 435
+            [function] => dispatch
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [31] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api.php
+            [line] => 471
+            [function] => serve_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [32] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => rest_api_loaded
+        )
+
+    [33] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [34] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [35] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 418
+            [function] => do_action_ref_array
+        )
+
+    [36] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 821
+            [function] => parse_request
+            [class] => WP
+            [type] => ->
+        )
+
+    [37] => Array
+        (
+            [file] => /var/www/html/wp-includes/functions.php
+            [line] => 1343
+            [function] => main
+            [class] => WP
+            [type] => ->
+        )
+
+    [38] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 16
+            [function] => wp
+        )
+
+    [39] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
+        )
+
+)
+
+[16-Jun-2026 03:10:02 UTC] === MAIL DEBUG START ===
+[16-Jun-2026 03:10:02 UTC] Class: WPMailSMTP\MailCatcherV6
+[16-Jun-2026 03:10:02 UTC] Mailer: mail
+[16-Jun-2026 03:10:02 UTC] Host: smtp.gmail.com
+[16-Jun-2026 03:10:02 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email.php
+            [line] => 1136
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/emails/class-wc-email-customer-processing-order.php
+            [line] => 103
+            [function] => send
+            [class] => WC_Email
+            [type] => ->
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => trigger
+            [class] => WC_Email_Customer_Processing_Order
+            [type] => ->
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-emails.php
+            [line] => 219
+            [function] => do_action_ref_array
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => send_transactional_email
+            [class] => WC_Emails
+            [type] => ::
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 476
+            [function] => do_action
+        )
+
+    [14] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 285
+            [function] => status_transition
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [15] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/includes/class-wc-order.php
+            [line] => 183
+            [function] => save
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [16] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/abstracts/abstract-wc-stripe-payment-gateway.php
+            [line] => 661
+            [function] => payment_complete
+            [class] => WC_Order
+            [type] => ->
+        )
+
+    [17] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1640
+            [function] => process_response
+            [class] => WC_Stripe_Payment_Gateway
+            [type] => ->
+        )
+
+    [18] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1405
+            [function] => process_payment_with_payment_method
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [19] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce-gateway-stripe/includes/payment-methods/class-wc-stripe-upe-payment-gateway.php
+            [line] => 1390
+            [function] => process_payment_with_deferred_intent
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [20] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Legacy.php
+            [line] => 56
+            [function] => process_payment
+            [class] => WC_Stripe_UPE_Payment_Gateway
+            [type] => ->
+        )
+
+    [21] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => process_legacy_payment
+            [class] => Automattic\WooCommerce\StoreApi\Legacy
+            [type] => ->
+        )
+
+    [22] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [23] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [24] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Utilities/CheckoutTrait.php
+            [line] => 82
+            [function] => do_action_ref_array
+        )
+
+    [25] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 557
+            [function] => process_payment
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [26] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/AbstractRoute.php
+            [line] => 119
+            [function] => get_route_post_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [27] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/woocommerce/src/StoreApi/Routes/V1/Checkout.php
+            [line] => 158
+            [function] => get_response_by_request_method
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\AbstractRoute
+            [type] => ->
+        )
+
+    [28] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1287
+            [function] => get_response
+            [class] => Automattic\WooCommerce\StoreApi\Routes\V1\Checkout
+            [type] => ->
+        )
+
+    [29] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 1120
+            [function] => respond_to_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [30] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api/class-wp-rest-server.php
+            [line] => 435
+            [function] => dispatch
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [31] => Array
+        (
+            [file] => /var/www/html/wp-includes/rest-api.php
+            [line] => 471
+            [function] => serve_request
+            [class] => WP_REST_Server
+            [type] => ->
+        )
+
+    [32] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => rest_api_loaded
+        )
+
+    [33] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [34] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [35] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 418
+            [function] => do_action_ref_array
+        )
+
+    [36] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp.php
+            [line] => 821
+            [function] => parse_request
+            [class] => WP
+            [type] => ->
+        )
+
+    [37] => Array
+        (
+            [file] => /var/www/html/wp-includes/functions.php
+            [line] => 1343
+            [function] => main
+            [class] => WP
+            [type] => ->
+        )
+
+    [38] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 16
+            [function] => wp
+        )
+
+    [39] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
+        )
+
+)
+
+[16-Jun-2026 03:10:06 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:06 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:06 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:06 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:06 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:06 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:06 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:07 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:15 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:22 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:22 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:23 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:23 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:27 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:27 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:27 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:28 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:30 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:30 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:30 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:30 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:30 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:30 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:30 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:30 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:30 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:30 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:30 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:31 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:31 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:31 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:31 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:31 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:31 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:32 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:32 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:32 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:32 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:32 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:33 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:33 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:33 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:33 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:33 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:33 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:33 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:10:33 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:03 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:04 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:04 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:04 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:04 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:04 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:04 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:04 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:04 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:04 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:04 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:14 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:24 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:11:34 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:13:34 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:15:34 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:17:34 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:19:34 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:24:33 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:24:42 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:26:42 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:28:42 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:30:42 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:41:49 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:53:38 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:53:47 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:53:57 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:53:57 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:53:57 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:53:57 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:54:03 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:54:12 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:54:27 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:54:35 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:54:48 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:55:02 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:55:11 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:55:11 UTC] === MAIL DEBUG START ===
+[16-Jun-2026 03:55:11 UTC] Class: WPMailSMTP\MailCatcherV6
+[16-Jun-2026 03:55:11 UTC] Mailer: mail
+[16-Jun-2026 03:55:11 UTC] Host: localhost
+[16-Jun-2026 03:55:11 UTC] Array
+(
+    [0] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => {closure}
+        )
+
+    [1] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [2] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 570
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [3] => Array
+        (
+            [file] => /var/www/html/wp-includes/pluggable.php
+            [line] => 622
+            [function] => do_action_ref_array
+        )
+
+    [4] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-otp/includes/otp-mailer.php
+            [line] => 38
+            [function] => wp_mail
+        )
+
+    [5] => Array
+        (
+            [file] => /var/www/html/wp-content/plugins/simple-auth/includes/auth-forgot.php
+            [line] => 30
+            [function] => sa_send_otp_email
+        )
+
+    [6] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 341
+            [function] => sa_handle_forgot_password
+        )
+
+    [7] => Array
+        (
+            [file] => /var/www/html/wp-includes/class-wp-hook.php
+            [line] => 365
+            [function] => apply_filters
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [8] => Array
+        (
+            [file] => /var/www/html/wp-includes/plugin.php
+            [line] => 522
+            [function] => do_action
+            [class] => WP_Hook
+            [type] => ->
+        )
+
+    [9] => Array
+        (
+            [file] => /var/www/html/wp-settings.php
+            [line] => 771
+            [function] => do_action
+        )
+
+    [10] => Array
+        (
+            [file] => /var/www/html/wp-config.php
+            [line] => 110
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-settings.php
+                )
+
+            [function] => require_once
+        )
+
+    [11] => Array
+        (
+            [file] => /var/www/html/wp-load.php
+            [line] => 50
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-config.php
+                )
+
+            [function] => require_once
+        )
+
+    [12] => Array
+        (
+            [file] => /var/www/html/wp-blog-header.php
+            [line] => 13
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-load.php
+                )
+
+            [function] => require_once
+        )
+
+    [13] => Array
+        (
+            [file] => /var/www/html/index.php
+            [line] => 17
+            [args] => Array
+                (
+                    [0] => /var/www/html/wp-blog-header.php
+                )
+
+            [function] => require
+        )
+
+)
+
+[16-Jun-2026 03:55:15 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:55:15 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:55:36 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:55:37 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:55:47 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:56:17 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:56:28 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:56:28 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:56:29 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:56:29 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:57:47 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:59:47 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 03:59:48 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 04:00:06 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 04:00:13 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 04:00:18 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[16-Jun-2026 04:00:25 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
