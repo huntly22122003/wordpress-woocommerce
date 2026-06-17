@@ -262,11 +262,11 @@ class Farm_Fresh_Chatbot {
      * Thêm vào trang sản phẩm WooCommerce
      */
     public function add_to_product_page() {
-        if (function_exists('is_product') && is_product()) {
-            echo '<div class="bpc-product-chat farm-section">';
-            echo $this->render_chatbot(['height' => '400px', 'title' => __('🌽 Hỏi về sản phẩm nông sản', 'farm-fresh-chatbot')]);
-            echo '</div>';
-        }
+        // if (function_exists('is_product') && is_product()) {
+        //     echo '<div class="bpc-product-chat farm-section">';
+        //     echo $this->render_chatbot(['height' => '400px', 'title' => __('🌽 Hỏi về sản phẩm nông sản', 'farm-fresh-chatbot')]);
+        //     echo '</div>';
+        // }
     }
     
     /**
