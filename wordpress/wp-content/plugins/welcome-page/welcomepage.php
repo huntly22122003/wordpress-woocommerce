@@ -6,6 +6,7 @@ Version: 1.0
 
 defined('ABSPATH') || exit;
 
+require plugin_dir_path(__FILE__) . 'views/frontpage.php';
 add_action('template_redirect', function () {
 
     if (is_front_page()) {
@@ -15,9 +16,16 @@ add_action('template_redirect', function () {
     }
 });
 
+<<<<<<< HEAD
 function sa_home_shop_full()
 {
     ob_start();
     include plugin_dir_path(__FILE__) . 'welcome-page.php';
     return ob_get_clean();
 }
+=======
+
+add_action('init', function () {
+    add_shortcode('sa_home', 'sa_home_shop_full');
+});
+>>>>>>> 1f345fe0ee4b16432d6405a2ee7fff7cb600a049

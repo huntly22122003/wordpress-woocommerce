@@ -75,4 +75,18 @@ function sa_template_loader() {
     }
 }
 
+add_action('wp_logout', 'sa_logout_session');
+
+add_filter('logout_redirect', function () {
+    return home_url('/sa-login');
+});
+add_action('wp_head', function () {
+    if (is_wc_endpoint_url('edit-account')) {
+        echo '<style>
+            .woocommerce-EditAccountForm fieldset {
+                display:none !important;
+            }
+        </style>';
+    }
+});
 add_action('template_redirect', 'sa_template_loader');

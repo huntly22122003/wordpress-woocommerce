@@ -75,8 +75,12 @@ function sa_home_shop_full()
 
     <?php
     return ob_get_clean();
+<<<<<<< HEAD
 }
 
 add_action('init', function () {
     add_shortcode('sa_home', 'sa_home_shop_full');
 });
+=======
+}
+>>>>>>> 1f345fe0ee4b16432d6405a2ee7fff7cb600a049

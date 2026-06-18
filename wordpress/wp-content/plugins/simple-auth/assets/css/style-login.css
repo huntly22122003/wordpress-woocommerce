@@ -6,9 +6,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    /* Background nông trại - ruộng bậc thang xanh mướt */
-    background: linear-gradient(135deg, rgba(30, 65, 25, 0.82), rgba(20, 50, 15, 0.88)), 
-                url('https://images.unsplash.com/photo-1564424224827-cd24b8915874?q=80&w=2070&auto=format');
+       background: linear-gradient(125deg, rgba(43, 110, 47, 0.92), rgba(26, 79, 29, 0.88)), 
+                url('https://images.pexels.com/photos/9137381/pexels-photo-9137381.jpeg');
     background-size: cover;
     background-position: center 30%;
     background-attachment: fixed;
@@ -43,7 +42,7 @@ body {
     flex: 1.2;
     /* Lớp phủ xanh + ảnh nông trại bên trong */
     background: linear-gradient(125deg, rgba(43, 110, 47, 0.92), rgba(26, 79, 29, 0.88)), 
-                url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=2070&auto=format');
+                url('https://images.pexels.com/photos/9137381/pexels-photo-9137381.jpeg');
     background-size: cover;
     background-position: center;
     position: relative;

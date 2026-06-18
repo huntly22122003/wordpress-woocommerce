@@ -18,6 +18,10 @@ function sa_handle_register()
     if (!isset($_POST['sa_register_submit'])) {
         return;
     }
+    
+    if (!session_id()) {
+        session_start();
+    }
 
     $username = trim($_POST['username'] ?? '');
     $email    = sanitize_email($_POST['email'] ?? '');
@@ -25,26 +29,34 @@ function sa_handle_register()
     $role = 'user'; // Mặc định role là 'user'
 
     if (!$username || !$email || !$password) {
-        wp_die('Vui lòng nhập đầy đủ thông tin');
+        $_SESSION['sa_error'] = 'Please fill in all fields';
+        wp_redirect(home_url('/sa-register'));
+        exit;
     }
 
     $userModel = new UserModel();
 
     // Check email tồn tại
     if ($userModel->findByEmail($email)) {
-        wp_die('Email đã tồn tại');
+        $_SESSION['sa_error'] = 'Email already exists';
+        wp_redirect(home_url('/sa-register'));
+        exit;
     }
 
 
     // Gửi OTP
     if (!function_exists('sa_send_otp_email')) {
-        wp_die('Simple OTP chưa được kích hoạt');
+        $_SESSION['sa_error'] = 'Simple OTP chưa được kích hoạt';
+        wp_redirect(home_url('/sa-register'));
+        exit;
     }
 
     $sent = sa_send_otp_email($email);
 
     if (!$sent) {
-        wp_die('Không thể gửi OTP');
+        $_SESSION['sa_error'] = 'Cannot send OTP';
+        wp_redirect(home_url('/sa-register'));
+        exit;
     }
 
     // Lưu tạm thông tin vào session để xác nhận sau
