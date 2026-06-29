@@ -61,7 +61,7 @@ msgstr "Thương hiệu sản phẩm"
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:903
 msgid "Shop by Brand"
-msgstr "Shop by Brand"
+msgstr " "
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:867
 msgid "You're viewing:"
@@ -427,12 +427,12 @@ msgstr "Tìm kiếm"
 #: inc/nux/class-storefront-nux-starter-content.php:1049
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:582
 msgid "Best Sellers"
-msgstr "Bán chạy nhất"
+msgstr " "
 
 #: inc/nux/class-storefront-nux-starter-content.php:1037
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:470
 msgid "Fan Favorites"
-msgstr "Nhiều người yêu thích"
+msgstr " "
 
 #: inc/nux/class-storefront-nux-starter-content.php:1108
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:414
@@ -442,12 +442,12 @@ msgstr "Chúng tôi khuyến nghị"
 #: inc/nux/class-storefront-nux-starter-content.php:1029
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:358
 msgid "New In"
-msgstr "Sản phẩm mới"
+msgstr " "
 
 #: inc/nux/class-storefront-nux-starter-content.php:1021
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:303
 msgid "Shop by Category"
-msgstr "Danh mục sản phẩm"
+msgstr " "
 
 #: inc/storefront-template-functions.php:242
 msgid "Menu"
@@ -469,11 +469,11 @@ msgstr "Một %s dự án"
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:667
 msgid "New In Store"
-msgstr "Sản phẩm mới"
+msgstr " "
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:654
 msgid "On Sale Now"
-msgstr "Đang giảm giá"
+msgstr " "
 
 #: inc/storefront-template-functions.php:580
 msgctxt "Previous post"
@@ -525,7 +525,7 @@ msgstr "Xem giỏ hàng của bạn"
 #: inc/nux/class-storefront-nux-starter-content.php:1043
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:526
 msgid "On Sale"
-msgstr "Đang giảm giá"
+msgstr " "
 
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:436
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:641
@@ -539,7 +539,7 @@ msgstr "Sản phẩm đã xem"
 #: 404.php:45 404.php:47
 #: inc/woocommerce/storefront-woocommerce-template-functions.php:324
 msgid "Product Categories"
-msgstr "Danh mục sản phẩm"
+msgstr " "
 
 #: inc/nux/class-storefront-nux-guided-tour.php:83
 msgid "Next"
