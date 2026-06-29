@@ -40,6 +40,7 @@ function sa_handle_login()
     error_log('User found ID: ' . $user['id']);
 
     if (!password_verify($password, $user['password'])) {
+        do_action('sa_login_failed', $email);
         $_SESSION['sa_error'] = 'Wrong password';
         wp_redirect(home_url('/sa-login'));
         exit;   
@@ -68,7 +69,7 @@ function sa_handle_login()
 
         wp_set_current_user($wp_user_id);
         wp_set_auth_cookie($wp_user_id, true);
-
+        do_action('sa_login_success', $email);
         do_action(
             'wp_login',
             $wp_user->user_login,
