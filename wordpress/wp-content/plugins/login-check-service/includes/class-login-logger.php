@@ -12,7 +12,7 @@ class LoginLogger {
             $sql = "CREATE TABLE IF NOT EXISTS login_check (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 email VARCHAR(100) NOT NULL,
-                action VARCHAR(10) NOT NULL,
+                action VARCHAR(20) NOT NULL,
                 login_time DATETIME DEFAULT CURRENT_TIMESTAMP,
                 ip_address VARCHAR(45),
                 user_agent TEXT
@@ -34,22 +34,30 @@ class LoginLogger {
         if (!empty($email)) {
             delete_transient('lcs_logout_email');
             $this->insert_log($email, 'logout');
-            error_log('LoginLogger: logout logged via transient for ' . $email);
             return;
         }
-
         $user = wp_get_current_user();
         if ($user->exists()) {
-            $email = $user->user_email;
-            $this->insert_log($email, 'logout');
-            error_log('LoginLogger: logout logged via user for ' . $email);
-            return;
+            $this->insert_log($user->user_email, 'logout');
         }
-
-        error_log('LoginLogger: logout called but no email found');
     }
 
-    public function insert_log($email, $action) {
+    public function log_register($user_id) {
+        $user = get_userdata($user_id);
+        if ($user) {
+            $this->insert_log($user->user_email, 'register');
+        }
+    }
+
+    // ===== HÀM MỚI CHO RESET PASSWORD =====
+    public function log_reset_password_custom($email) {
+        if (!empty($email)) {
+            $this->insert_log($email, 'reset_password');
+            error_log("LoginLogger: reset_password logged for $email");
+        }
+    }
+
+    private function insert_log($email, $action) {
         try {
             $ip = $_SERVER['REMOTE_ADDR'] ?? '';
             $agent = $_SERVER['HTTP_USER_AGENT'] ?? '';

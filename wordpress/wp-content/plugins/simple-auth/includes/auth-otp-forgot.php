@@ -51,7 +51,7 @@ function sa_handle_reset_password()
     if (!$updated) {
         wp_die('Không thể cập nhật mật khẩu');
     }
-
+    do_action('sa_reset_password_success', $email);
     unset($_SESSION['sa_reset_email']);
 
     wp_redirect(home_url('/sa-login'));

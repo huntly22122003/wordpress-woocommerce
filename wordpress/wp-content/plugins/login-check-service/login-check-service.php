@@ -1,16 +1,13 @@
 <?php
 /**
  * Plugin Name: Login Check Service
- * Description: Ghi log login/logout vào auth_db và hiển thị log trên trang simple-auth.
+ * Description: Microservice ghi log login/logout và register vào auth_db.
  * Version: 1.0
  * Author: Your Name
  */
 
-if (!defined('ABSPATH')) {
-    exit;
-}
+if (!defined('ABSPATH')) exit;
 
-// Sử dụng hằng số từ plugin AuthDB (nếu chưa defined thì tự định nghĩa mặc định)
 if (!defined('SA_DB_HOST')) {
     define('SA_DB_HOST', 'localhost');
     define('SA_DB_NAME', 'auth_db');
@@ -28,13 +25,20 @@ require_once LCS_PLUGIN_DIR . 'includes/class-admin.php';
 $logger = new LoginLogger();
 register_activation_hook(__FILE__, array($logger, 'create_table'));
 
-// Hook login
+// Login
 add_action('wp_login', array($logger, 'log_login'), 10, 2);
 
-// Hook logout (dùng cả hai để đảm bảo)
+// Logout
 add_action('wp_logout', array($logger, 'log_logout'), 999);
 add_action('clear_auth_cookie', array($logger, 'log_logout'), 999);
 
+// Register
+add_action('user_register', array($logger, 'log_register'));
+
+//Reset password
+add_action('sa_reset_password_success', array($logger, 'log_reset_password_custom'));
+
+// Admin
 $admin = new LCS_Admin();
 add_action('admin_init', array($admin, 'handle_view_log'));
 add_action('admin_footer', array($admin, 'add_check_log_buttons'));
