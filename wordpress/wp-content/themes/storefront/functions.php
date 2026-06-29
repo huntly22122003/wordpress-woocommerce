@@ -64,8 +64,34 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
 	require 'inc/nux/class-storefront-nux-guided-tour.php';
 	require 'inc/nux/class-storefront-nux-starter-content.php';
 }
+add_action('wp', function() {
 
-/**
+    // Danh mục sản phẩm
+    remove_action('homepage', 'storefront_product_categories', 20);
+
+    // Sản phẩm mới
+    remove_action('homepage', 'storefront_recent_products', 30);
+
+    // Nhiều người yêu thích (featured)
+    remove_action('homepage', 'storefront_featured_products', 40);
+
+    // ❗ thêm cái này (fallback)
+    remove_action('homepage', 'woocommerce_featured_products', 40);
+
+    // Đang giảm giá
+    remove_action('homepage', 'storefront_on_sale_products', 60);
+
+    // Bán chạy nhất
+    remove_action('homepage', 'storefront_popular_products', 70);
+
+    // ❗ thêm fallback
+    remove_action('homepage', 'woocommerce_top_rated_products', 50);
+
+    // Shop by Brand (plugin)
+    remove_action('homepage', 'storefront_homepage_brands', 80);
+    remove_action('homepage', 'storefront_brands', 80);
+
+});/**
  * Note: Do not add any custom code here. Please use a custom plugin so that your customizations aren't lost during updates.
  * https://github.com/woocommerce/theme-customisations
  */
