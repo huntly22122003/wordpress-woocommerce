@@ -154,9 +154,7 @@ class Farm_Fresh_Chatbot {
     </svg>
 </button>
                 </div>
-                <div class="bpc-input-footer">
-                    <span class="bpc-powered-by">🌾 Nông sản sạch - An toàn cho sức khỏe</span>
-                </div>
+               
             </div>
         </div>
         
@@ -274,9 +272,7 @@ class Farm_Fresh_Chatbot {
      */
     public function add_product_support_button() {
         ?>
-        <button type="button" class="bpc-product-support-btn" onclick="openProductChat()">
-            🥬 <?php _e('Hỏi về nông sản này', 'farm-fresh-chatbot'); ?>
-        </button>
+      
         <style>
             .bpc-product-support-btn {
                 margin-top: 10px;
@@ -376,15 +372,313 @@ class Farm_Fresh_Chatbot {
     }
 }
 
-// Tự động thêm floating chatbot nếu muốn (có thể bật/tắt trong setting)
+// SỬA LẠI TOÀN BỘ FUNCTION auto_add_farming_chatbot()
 add_action('wp_footer', 'auto_add_farming_chatbot');
 function auto_add_farming_chatbot() {
     if (!is_admin() && get_option('bpc_auto_floating', true)) {
-        echo '<div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">';
-        echo do_shortcode('[farm_chatbot]');
-        echo '</div>';
+        // CHỈ HIỂN THỊ 1 CHATBOT DUY NHẤT
+        ?>
+        <!-- Chỉ hiển thị floating button -->
+        <div class="bpc-floating-trigger" style="position: fixed; bottom: 20px; right: 20px; z-index: 99998; cursor: pointer;">
+            <div class="bpc-floating-button" style="background: #2d6a4f; display: flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 50px; box-shadow: 0 4px 16px rgba(45, 106, 79, 0.4); color: white; font-weight: 600; transition: all 0.3s ease;">
+                <span style="font-size: 24px;">🥬</span>
+                <span style="font-size: 14px;">Tư vấn nông sản</span>
+            </div>
+        </div>
+        
+        <!-- Chat container - CHỈ 1 CÁI DUY NHẤT, ẨN BAN ĐẦU -->
+        <div class="bpc-chatbot-dropdown-wrapper" style="position: fixed; bottom: 80px; right: 20px; z-index: 99999;">
+            <div class="bpc-chatbot-container farm-theme" style="display: none; width: 380px; max-width: 90vw; max-height: 550px; background: #0d1f12; border: 1px solid #2d6a4f; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); flex-direction: column; overflow: hidden;">
+                
+                <!-- Header -->
+                <div class="bpc-chat-header" style="background: #0a170e; padding: 12px 16px; border-bottom: 2px solid #2d6a4f; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <h3 style="margin: 0; color: #74c69d; font-size: 15px; font-weight: 600;">🌾 Nông Sản Sạch - Chatbot</h3>
+                    </div>
+                    <div>
+                        <button class="bpc-clear-chat-btn" id="bpcClearChatBtn" style="background: transparent; border: none; color: #5a8a7a; cursor: pointer; padding: 4px 8px; font-size: 16px;" title="Xoá lịch sử chat">🗑️</button>
+                        <button class="bpc-minimize-btn" onclick="closeChatbot()" style="background: transparent; border: none; color: #74c69d; font-size: 20px; cursor: pointer; padding: 0 8px;">−</button>
+                    </div>
+                </div>
+                
+                <!-- Messages -->
+                <div class="bpc-chat-messages" id="bpc-messages" style="flex: 1; padding: 16px; overflow-y: auto; max-height: 400px; min-height: 200px; background: #0d1f12;">
+                    <div class="bpc-message bot" style="margin-bottom: 12px; display: flex; justify-content: flex-start;">
+                        <div class="bpc-message-content" style="max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.5; word-wrap: break-word; background: #1a3a2a; color: #d4edda; border-bottom-left-radius: 4px;">
+                            🌻 Chào bạn! Tôi là trợ lý của shop nông sản. Hôm nay bạn muốn tìm rau sạch, trái cây tươi hay cần tư vấn món gì ạ? 🥬🍅
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Input -->
+                <div class="bpc-chat-input-area" style="padding: 12px 16px; border-top: 1px solid #1a3a2a; background: #0a170e;">
+                    <div class="bpc-input-wrapper" style="display: flex; gap: 8px; align-items: flex-end;">
+                        <textarea 
+                            id="bpc-message-input" 
+                            class="bpc-message-input" 
+                            placeholder="Nhập câu hỏi về sản phẩm nông sản..." 
+                            rows="1"
+                            style="flex: 1; padding: 8px 12px; border: 1px solid #2d6a4f; border-radius: 8px; background: #0d1f12; color: #d4edda; font-size: 14px; resize: none; max-height: 80px; min-height: 36px; line-height: 1.5;"
+                        ></textarea>
+                        <button id="bpc-send-btn" class="bpc-send-btn" style="padding: 8px 12px; background: #2d6a4f; color: white; border: none; border-radius: 8px; cursor: pointer; height: 36px; display: flex; align-items: center; justify-content: center;">
+                            <svg viewBox="0 0 24 24" width="18" height="18" style="stroke: currentColor;">
+                                <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            /* Animation */
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px) scale(0.95);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+            
+            .bpc-chatbot-container.farm-theme.active {
+                display: flex !important;
+                animation: slideUp 0.3s ease;
+            }
+            
+            .bpc-floating-button:hover {
+                transform: scale(1.05);
+                box-shadow: 0 6px 24px rgba(45, 106, 79, 0.6);
+            }
+            
+            .bpc-send-btn:hover {
+                background: #74c69d !important;
+            }
+            
+            .bpc-message-input:focus {
+                outline: none;
+                border-color: #74c69d !important;
+            }
+            
+            .bpc-clear-chat-btn:hover {
+                color: #ff6b6b !important;
+            }
+            
+            /* Scrollbar */
+            .bpc-chat-messages::-webkit-scrollbar {
+                width: 6px;
+            }
+            .bpc-chat-messages::-webkit-scrollbar-track {
+                background: #1a3a2a;
+                border-radius: 8px;
+            }
+            .bpc-chat-messages::-webkit-scrollbar-thumb {
+                background: #2d6a4f;
+                border-radius: 8px;
+            }
+            
+            @media (max-width: 480px) {
+                .bpc-chatbot-container.farm-theme {
+                    width: calc(100vw - 30px) !important;
+                    right: 10px !important;
+                    max-height: 70vh !important;
+                }
+                .bpc-floating-button span {
+                    display: none;
+                }
+                .bpc-floating-button {
+                    padding: 12px 14px !important;
+                }
+            }
+        </style>
+        
+        <script>
+        jQuery(document).ready(function($) {
+            // Biến trạng thái
+            let sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            
+            // Elements
+            const chatContainer = $('.bpc-chatbot-container.farm-theme');
+            const floatingBtn = $('.bpc-floating-trigger');
+            const messagesContainer = $('#bpc-messages');
+            const inputField = $('#bpc-message-input');
+            const sendBtn = $('#bpc-send-btn');
+            const clearBtn = $('#bpcClearChatBtn');
+            
+            // Mở chat
+            function openChatbot() {
+                chatContainer.addClass('active');
+                localStorage.setItem('bpc_chat_state', 'open');
+                setTimeout(() => inputField.focus(), 300);
+            }
+            
+            // Đóng chat (gọi từ nút minimize)
+            window.closeChatbot = function() {
+                chatContainer.removeClass('active');
+                localStorage.setItem('bpc_chat_state', 'closed');
+            };
+            
+            // Toggle
+            function toggleChatbot() {
+                if (chatContainer.hasClass('active')) {
+                    closeChatbot();
+                } else {
+                    openChatbot();
+                }
+            }
+            
+            // Click floating button
+            floatingBtn.on('click', toggleChatbot);
+            
+            // Click header để toggle
+            chatContainer.find('.bpc-chat-header').on('click', function(e) {
+                if ($(e.target).closest('button').length) return;
+                toggleChatbot();
+            });
+            
+            // Click outside để đóng
+            $(document).on('click', function(e) {
+                if (chatContainer.hasClass('active')) {
+                    if (!$(e.target).closest('.bpc-chatbot-dropdown-wrapper').length && 
+                        !$(e.target).closest('.bpc-floating-trigger').length) {
+                        closeChatbot();
+                    }
+                }
+            });
+            
+            // Khôi phục trạng thái khi refresh
+            if (localStorage.getItem('bpc_chat_state') === 'open') {
+                setTimeout(openChatbot, 500);
+            }
+            
+            // Gửi tin nhắn
+            function sendMessage() {
+                const message = inputField.val().trim();
+                if (!message) return;
+                
+                // Thêm tin nhắn user
+                addMessage(message, true);
+                inputField.val('');
+                inputField.css('height', 'auto');
+                
+                // Hiển thị typing
+                showTyping();
+                
+                // Gửi API
+                $.ajax({
+                    url: 'http://localhost:8000/api/chat',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        session_id: sessionId,
+                        message: message,
+                        site_url: window.location.origin
+                    }),
+                    timeout: 30000,
+                    success: function(response) {
+                        hideTyping();
+                        if (response && response.reply) {
+                            addMessage(response.reply);
+                        } else {
+                            addMessage('🌿 Cảm ơn bạn đã quan tâm! Tôi sẽ hỗ trợ bạn tốt nhất.');
+                        }
+                    },
+                    error: function() {
+                        hideTyping();
+                        const fallbacks = [
+                            '🌱 Rất tiếc, tôi đang gặp vấn đề. Vui lòng thử lại sau!',
+                            '🍃 Xin lỗi, hệ thống đang bận. Bạn vui lòng thử lại!',
+                            '🥬 Hệ thống đang bảo trì. Vui lòng quay lại sau!'
+                        ];
+                        addMessage(fallbacks[Math.floor(Math.random() * fallbacks.length)]);
+                    }
+                });
+            }
+            
+            // Thêm tin nhắn
+            function addMessage(message, isUser = false) {
+                const msgClass = isUser ? 'user' : 'bot';
+                const style = isUser ? 
+                    'background: #2d6a4f; color: #ffffff; border-bottom-right-radius: 4px;' : 
+                    'background: #1a3a2a; color: #d4edda; border-bottom-left-radius: 4px;';
+                const align = isUser ? 'flex-end' : 'flex-start';
+                
+                const html = `
+                    <div class="bpc-message ${msgClass}" style="margin-bottom: 12px; display: flex; justify-content: ${align};">
+                        <div class="bpc-message-content" style="max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.5; word-wrap: break-word; ${style}">
+                            ${message}
+                        </div>
+                    </div>
+                `;
+                messagesContainer.append(html);
+                scrollToBottom();
+            }
+            
+            // Typing indicator
+            function showTyping() {
+                const html = `
+                    <div class="bpc-typing-indicator" style="padding: 8px 16px;">
+                        <div style="display: inline-flex; gap: 4px; background: #1a3a2a; padding: 8px 12px; border-radius: 12px;">
+                            <span style="width: 6px; height: 6px; background: #74c69d; border-radius: 50%; animation: typingBounce 1.4s infinite;"></span>
+                            <span style="width: 6px; height: 6px; background: #74c69d; border-radius: 50%; animation: typingBounce 1.4s infinite; animation-delay: 0.2s;"></span>
+                            <span style="width: 6px; height: 6px; background: #74c69d; border-radius: 50%; animation: typingBounce 1.4s infinite; animation-delay: 0.4s;"></span>
+                        </div>
+                    </div>
+                `;
+                messagesContainer.append(html);
+                scrollToBottom();
+            }
+            
+            function hideTyping() {
+                $('.bpc-typing-indicator').remove();
+            }
+            
+            function scrollToBottom() {
+                messagesContainer.scrollTop(messagesContainer[0].scrollHeight);
+            }
+            
+            // Events
+            sendBtn.on('click', sendMessage);
+            inputField.on('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+            inputField.on('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+            
+            // Clear chat
+            clearBtn.on('click', function(e) {
+                e.stopPropagation();
+                if (confirm('Xóa toàn bộ lịch sử chat?')) {
+                    const firstMsg = messagesContainer.find('.bpc-message:first');
+                    messagesContainer.empty();
+                    if (firstMsg.length) {
+                        messagesContainer.append(firstMsg);
+                    }
+                    scrollToBottom();
+                }
+            });
+            
+            // Thêm keyframe animation
+            $('<style>')
+                .text(`
+                    @keyframes typingBounce {
+                        0%, 60%, 100% { transform: translateY(0); }
+                        30% { transform: translateY(-6px); }
+                    }
+                `)
+                .appendTo('head');
+        });
+        </script>
+        <?php
     }
 }
-
 // Khởi tạo plugin
 Farm_Fresh_Chatbot::get_instance();

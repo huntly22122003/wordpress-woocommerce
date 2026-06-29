@@ -3,7 +3,7 @@
  * Plugin Name: Nông Sản Layout Customizer
  * Plugin URI: https://nongsanvuive.com/
  * Description: Tùy chỉnh layout trang chủ - căn chỉnh ảnh và dàn đều bố cục
- * Version: 1.1.0
+ * Version: 2.0.0
  * Author: Nông sản vui vẻ
  * Text Domain: nong-san-layout
  */
@@ -36,22 +36,25 @@ class Nong_San_Layout_Customizer {
         
         // Thêm class vào body để tùy chỉnh layout
         add_filter( 'body_class', array( $this, 'add_layout_body_class' ) );
+        
+        // Thêm inline styles cho animation và màu trắng
+        add_action( 'wp_head', array( $this, 'add_inline_styles' ), 999 );
     }
 
     /**
      * Enqueue CSS cho frontend
      */
     public function enqueue_layout_styles() {
-        // Áp dụng cho tất cả các trang
-        wp_enqueue_style(
-            'nong-san-layout-style',
-            plugin_dir_url( __FILE__ ) . 'assets/layout-style.css',
-            array(),
-            '1.1.0'
-        );
-        
-        // Thêm CSS inline cho các tùy chỉnh nhanh
-        wp_add_inline_style( 'nong-san-layout-style', $this->get_dynamic_css() );
+        // Chỉ thêm CSS nếu file tồn tại
+        $css_file = plugin_dir_path( __FILE__ ) . 'assets/layout-style.css';
+        if ( file_exists( $css_file ) ) {
+            wp_enqueue_style(
+                'nong-san-layout-style',
+                plugin_dir_url( __FILE__ ) . 'assets/layout-style.css',
+                array(),
+                '2.0.0'
+            );
+        }
     }
 
     /**
@@ -62,261 +65,269 @@ class Nong_San_Layout_Customizer {
             'nong-san-layout-admin',
             plugin_dir_url( __FILE__ ) . 'assets/admin-style.css',
             array(),
-            '1.1.0'
+            '2.0.0'
         );
     }
 
     /**
-     * Lấy CSS động từ các tùy chọn
+     * Thêm inline styles - CHỈ GIỮ ANIMATION VÀ MÀU CHỮ TRẮNG
+     */
+    public function add_inline_styles() {
+        // Chỉ áp dụng cho trang chủ
+        if ( ! is_front_page() && ! is_home() ) {
+            return;
+        }
+        ?>
+        <style>
+        /* ============================================================
+           ANIMATION - CHỈ GIỮ HIỆU ỨNG XUẤT HIỆN
+           ============================================================ */
+
+        /* 1. Keyframes cho animation */
+        @keyframes nong-san-fade-up {
+            0% {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes nong-san-slide-left {
+            0% {
+                opacity: 0;
+                transform: translateX(-80px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes nong-san-slide-right {
+            0% {
+                opacity: 0;
+                transform: translateX(80px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes nong-san-zoom-in {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* 2. Áp dụng animation cho các phần tử chính */
+        .wp-block-cover {
+            animation: nong-san-fade-up 0.8s ease forwards;
+        }
+
+        .wp-block-columns .wp-block-column:first-child {
+            animation: nong-san-slide-left 0.8s ease forwards;
+        }
+
+        .wp-block-columns .wp-block-column:last-child {
+            animation: nong-san-slide-right 0.8s ease forwards;
+        }
+
+        /* 3. Animation cho từng column con */
+        .wp-block-column.is-layout-flow .wp-block-column {
+            animation: nong-san-zoom-in 0.6s ease forwards;
+        }
+
+        .wp-block-column.is-layout-flow .wp-block-column:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .wp-block-column.is-layout-flow .wp-block-column:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .wp-block-column.is-layout-flow .wp-block-column:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .wp-block-column.is-layout-flow .wp-block-column:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        /* 4. Animation cho product collection */
+        .wc-block-product {
+            animation: nong-san-fade-up 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .wc-block-product:nth-child(1) { animation-delay: 0.1s; }
+        .wc-block-product:nth-child(2) { animation-delay: 0.2s; }
+        .wc-block-product:nth-child(3) { animation-delay: 0.3s; }
+        .wc-block-product:nth-child(4) { animation-delay: 0.4s; }
+        .wc-block-product:nth-child(5) { animation-delay: 0.5s; }
+        .wc-block-product:nth-child(6) { animation-delay: 0.6s; }
+
+        /* 5. Hover effect nhẹ cho sản phẩm */
+        .wc-block-product:hover {
+            transform: translateY(-5px) !important;
+            transition: transform 0.3s ease !important;
+        }
+
+        /* 6. Animation cho cover image */
+        .wp-block-cover__image-background {
+            animation: nong-san-zoom-in 1s ease forwards;
+        }
+
+        /* 7. Animation cho buttons */
+        .wp-block-button__link {
+            animation: nong-san-fade-up 0.8s ease forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+
+        /* 8. Animation cho heading */
+        .wp-block-heading {
+            animation: nong-san-slide-left 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .wp-block-heading:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        /* 9. Animation cho paragraphs */
+        .wp-block-paragraph {
+            animation: nong-san-fade-up 0.8s ease forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        /* ============================================================
+           MÀU CHỮ TRẮNG - CHỈ CHO COVER VÀ NỀN TỐI
+           ============================================================ */
+
+        /* Chữ trắng trên cover block */
+        .wp-block-cover .wp-block-cover__inner-container,
+        .wp-block-cover .wp-block-cover__inner-container * {
+            color: #ffffff !important;
+        }
+
+        /* Chữ trắng trên nền tối */
+        .wp-block-cover .wp-block-cover__inner-container h1,
+        .wp-block-cover .wp-block-cover__inner-container h2,
+        .wp-block-cover .wp-block-cover__inner-container h3,
+        .wp-block-cover .wp-block-cover__inner-container h4,
+        .wp-block-cover .wp-block-cover__inner-container h5,
+        .wp-block-cover .wp-block-cover__inner-container h6,
+        .wp-block-cover .wp-block-cover__inner-container p,
+        .wp-block-cover .wp-block-cover__inner-container span,
+        .wp-block-cover .wp-block-cover__inner-container a,
+        .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link {
+            color: #ffffff !important;
+        }
+
+        /* Chữ trắng trên cover light */
+        .wp-block-cover.is-light .wp-block-cover__inner-container * {
+            color: #ffffff !important;
+        }
+
+        /* Chữ trắng cho button khi ở trong cover */
+        .wp-block-cover .wp-block-button .wp-block-button__link {
+            color: #ffffff !important;
+            background: rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(10px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        }
+
+        .wp-block-cover .wp-block-button .wp-block-button__link:hover {
+            background: rgba(255, 255, 255, 0.3) !important;
+            transform: scale(1.05) !important;
+        }
+
+        /* Chữ trắng trên footer */
+        .site-footer,
+        .site-footer * {
+            color: #ffffff !important;
+        }
+
+        .site-footer a {
+            color: #a5d6a7 !important;
+        }
+
+        .site-footer a:hover {
+            color: #ffffff !important;
+        }
+
+        /* ============================================================
+           RESPONSIVE - ĐIỀU CHỈNH ANIMATION TRÊN MOBILE
+           ============================================================ */
+
+        @media (max-width: 768px) {
+            .wp-block-columns .wp-block-column:first-child,
+            .wp-block-columns .wp-block-column:last-child {
+                animation: nong-san-fade-up 0.6s ease forwards;
+            }
+            
+            .wp-block-column.is-layout-flow .wp-block-column {
+                animation-delay: 0.1s !important;
+            }
+            
+            .wp-block-heading {
+                animation: nong-san-fade-up 0.6s ease forwards;
+            }
+            
+            .wc-block-product {
+                animation-delay: 0.05s !important;
+            }
+            
+            .wc-block-product:nth-child(1) { animation-delay: 0.05s !important; }
+            .wc-block-product:nth-child(2) { animation-delay: 0.1s !important; }
+            .wc-block-product:nth-child(3) { animation-delay: 0.15s !important; }
+            .wc-block-product:nth-child(4) { animation-delay: 0.2s !important; }
+            .wc-block-product:nth-child(5) { animation-delay: 0.25s !important; }
+            .wc-block-product:nth-child(6) { animation-delay: 0.3s !important; }
+        }
+
+        @media (max-width: 480px) {
+            .wp-block-cover {
+                min-height: 200px !important;
+            }
+            
+            .wp-block-heading {
+                font-size: 24px !important;
+            }
+        }
+
+        /* ============================================================
+           ĐIỀU CHỈNH THỜI GIAN ANIMATION KHI SCROLL
+           ============================================================ */
+
+        /* Giảm delay khi scroll */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        </style>
+        <?php
+    }
+
+    /**
+     * Lấy CSS động từ các tùy chọn - KHÔNG CÒN SỬ DỤNG
      */
     private function get_dynamic_css() {
-        $image_size = get_theme_mod( 'nong_san_image_size', 'medium' );
-        $layout_style = get_theme_mod( 'nong_san_layout_style', 'grid' );
-        $spacing = get_theme_mod( 'nong_san_spacing', '20' );
-        $full_width = get_theme_mod( 'nong_san_full_width', true );
-        
-        $css = "
-            /* NÔNG SẢN LAYOUT CUSTOMIZER - CORE STYLES */
-            
-            /* ==========================================
-               1. LAYOUT TỔNG - FULL WIDTH
-               ========================================== */";
-        
-        if ( $full_width ) {
-            $css .= "
-            /* Full width cho trang chủ */
-            .home .site-content .col-full,
-            .page-template-template-homepage .site-content .col-full {
-                max-width: 100% !important;
-                padding: 0 30px !important;
-                margin: 0 auto !important;
-                width: 100% !important;
-            }
-            
-            /* Loại bỏ giới hạn width cho các block */
-            .home .wp-block-group.alignfull,
-            .page-template-template-homepage .wp-block-group.alignfull {
-                padding-left: 30px !important;
-                padding-right: 30px !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                max-width: 100% !important;
-                width: 100% !important;
-            }
-            
-            /* Dàn đều các cột */
-            .home .wp-block-columns,
-            .page-template-template-homepage .wp-block-columns {
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                gap: 20px !important;
-            }
-            
-            /* Căn chỉnh content trong columns */
-            .home .wp-block-column,
-            .page-template-template-homepage .wp-block-column {
-                padding: 0 !important;
-            }
-            
-            /* Điều chỉnh container của cover block */
-            .home .wp-block-cover,
-            .page-template-template-homepage .wp-block-cover {
-                width: 100% !important;
-                max-width: 100% !important;
-                margin: 0 !important;
-            }
-            ";
-        }
-        
-        $css .= "
-            /* ==========================================
-               2. CĂN CHỈNH ẢNH SẢN PHẨM
-               ========================================== */
-            .woocommerce ul.products {
-                display: grid !important;
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
-                gap: {$spacing}px !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            
-            .woocommerce ul.products li.product {
-                margin: 0 !important;
-                padding: 0 !important;
-                background: #fff;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-                transition: all 0.3s ease;
-            }
-            
-            .woocommerce ul.products li.product:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-            }
-            
-            /* Căn chỉnh ảnh đồng đều */
-            .woocommerce ul.products li.product img {
-                width: 100% !important;
-                height: 250px !important;
-                object-fit: cover !important;
-                object-position: center !important;
-                transition: transform 0.5s ease !important;
-                border-radius: 8px 8px 0 0 !important;
-            }
-            
-            .woocommerce ul.products li.product:hover img {
-                transform: scale(1.05);
-            }
-            
-            /* ==========================================
-               3. CĂN CHỈNH ẢNH COVER TRONG BLOCKS
-               ========================================== */
-            .wp-block-cover {
-                min-height: 400px;
-                border-radius: 12px;
-                overflow: hidden;
-                margin-bottom: 20px !important;
-            }
-            
-            .wp-block-cover .wp-block-cover__image-background {
-                object-fit: cover !important;
-                object-position: center !important;
-            }
-            
-            /* Nội dung trong cover */
-            .wp-block-cover .wp-block-cover__inner-container {
-                max-width: 1200px !important;
-                padding: 20px !important;
-                margin: 0 auto !important;
-            }
-            
-            /* ==========================================
-               4. DÀN ĐỀU NỘI DUNG CÁC CỘT
-               ========================================== */
-            .home .wp-block-columns .wp-block-column,
-            .page-template-template-homepage .wp-block-columns .wp-block-column {
-                flex: 1 !important;
-                min-width: 0 !important;
-            }
-            
-            /* Căn chỉnh ảnh trong columns */
-            .wp-block-columns .wp-block-column figure {
-                margin: 0 !important;
-                overflow: hidden;
-                border-radius: 8px;
-                height: 100%;
-            }
-            
-            .wp-block-columns .wp-block-column figure img {
-                width: 100% !important;
-                height: 300px !important;
-                object-fit: cover !important;
-                transition: transform 0.4s ease !important;
-            }
-            
-            .wp-block-columns .wp-block-column figure:hover img {
-                transform: scale(1.03);
-            }
-            
-            /* ==========================================
-               5. LAYOUT CHO CÁC SECTION SẢN PHẨM
-               ========================================== */
-            .storefront-product-section {
-                padding: 20px 0 !important;
-            }
-            
-            .storefront-product-section .section-title {
-                font-size: 28px !important;
-                font-weight: 700 !important;
-                margin-bottom: 25px !important;
-                color: #2E7D32 !important;
-            }
-            
-            /* ==========================================
-               6. RESPONSIVE
-               ========================================== */
-            @media (max-width: 992px) {
-                .home .wp-block-columns,
-                .page-template-template-homepage .wp-block-columns {
-                    flex-direction: column !important;
-                }
-                
-                .home .wp-block-columns .wp-block-column {
-                    width: 100% !important;
-                    flex-basis: 100% !important;
-                }
-                
-                .wp-block-columns .wp-block-column figure img {
-                    height: 250px !important;
-                }
-            }
-            
-            @media (max-width: 768px) {
-                .home .site-content .col-full,
-                .page-template-template-homepage .site-content .col-full {
-                    padding: 0 15px !important;
-                }
-                
-                .woocommerce ul.products {
-                    grid-template-columns: repeat(2, 1fr) !important;
-                    gap: 10px !important;
-                }
-                
-                .woocommerce ul.products li.product img {
-                    height: 180px !important;
-                }
-                
-                .wp-block-cover {
-                    min-height: 250px !important;
-                }
-                
-                .wp-block-columns .wp-block-column figure img {
-                    height: 200px !important;
-                }
-                
-                .home .wp-block-group.alignfull,
-                .page-template-template-homepage .wp-block-group.alignfull {
-                    padding-left: 15px !important;
-                    padding-right: 15px !important;
-                }
-            }
-            
-            @media (max-width: 480px) {
-                .woocommerce ul.products {
-                    grid-template-columns: repeat(2, 1fr) !important;
-                    gap: 8px !important;
-                }
-                
-                .woocommerce ul.products li.product img {
-                    height: 140px !important;
-                }
-            }
-        ";
-        
-        // Thêm tùy chỉnh layout style
-        if ( $layout_style === 'masonry' ) {
-            $css .= "
-                .woocommerce ul.products {
-                    display: block !important;
-                    column-count: 4;
-                    column-gap: {$spacing}px;
-                }
-                
-                .woocommerce ul.products li.product {
-                    break-inside: avoid;
-                    margin-bottom: {$spacing}px !important;
-                }
-                
-                @media (max-width: 768px) {
-                    .woocommerce ul.products {
-                        column-count: 2;
-                    }
-                }
-            ";
-        }
-        
-        return $css;
+        // Trả về chuỗi rỗng để không thêm CSS cũ
+        return '';
     }
 
     /**
@@ -424,6 +435,13 @@ function nong_san_layout_activate() {
     $plugin_dir = plugin_dir_path( __FILE__ );
     
     if ( ! file_exists( $plugin_dir . 'assets' ) ) {
-        mkdir( $plugin_dir . 'assets', 0755 );
+        mkdir( $plugin_dir . 'assets', 0755, true );
+    }
+    
+    // Tạo file CSS mặc định nếu chưa có
+    $css_file = $plugin_dir . 'assets/layout-style.css';
+    if ( ! file_exists( $css_file ) ) {
+        $css_content = '/* Nông Sản Layout Customizer - Styles */';
+        file_put_contents( $css_file, $css_content );
     }
 }

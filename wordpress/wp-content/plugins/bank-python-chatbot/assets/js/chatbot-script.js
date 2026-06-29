@@ -5,11 +5,36 @@
     let sessionId = localStorage.getItem('bpc_session_id');
     let isTyping = false;
     let currentChatbot = null;
+    let isChatOpen = false;
     
     // Khởi tạo session ID
     if (!sessionId) {
         sessionId = 'wp_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
         localStorage.setItem('bpc_session_id', sessionId);
+    }
+    
+    // Khôi phục trạng thái chat từ localStorage
+    function restoreChatState() {
+        const chatState = localStorage.getItem('bpc_chat_state');
+        if (chatState) {
+            try {
+                const state = JSON.parse(chatState);
+                isChatOpen = state.isOpen || false;
+                return state;
+            } catch (e) {
+                return null;
+            }
+        }
+        return null;
+    }
+    
+    // Lưu trạng thái chat
+    function saveChatState(isOpen) {
+        const state = {
+            isOpen: isOpen,
+            timestamp: Date.now()
+        };
+        localStorage.setItem('bpc_chat_state', JSON.stringify(state));
     }
     
     // Hàm gửi tin nhắn
@@ -84,7 +109,7 @@
         // Scroll xuống cuối
         container.scrollTop = container.scrollHeight;
         
-        // Lưu vào localStorage (optional)
+        // Lưu vào localStorage
         saveMessageToHistory(sender, text);
     }
     
@@ -141,14 +166,27 @@
     }
     
     // Toggle chat window (cho floating mode)
-    window.toggleChatbot = function() {
+    window.toggleChatbot = function(event) {
+        if (event) {
+            event.stopPropagation();
+        }
+        
         const container = document.querySelector('.bpc-chatbot-container');
         if (container) {
-            container.classList.toggle('minimized');
+            const isMinimized = container.classList.toggle('minimized');
+            isChatOpen = !isMinimized;
+            saveChatState(isChatOpen);
             
             const minimizeBtn = document.querySelector('.bpc-minimize-btn');
             if (minimizeBtn) {
-                minimizeBtn.textContent = container.classList.contains('minimized') ? '✕' : '−';
+                minimizeBtn.textContent = isMinimized ? '💬' : '−';
+            }
+            
+            if (!isMinimized) {
+                setTimeout(() => {
+                    const input = document.getElementById('bpc-message-input');
+                    if (input) input.focus();
+                }, 300);
             }
         }
     };
@@ -228,56 +266,77 @@
         input.focus();
     };
     
-    // Thêm nút xóa vào header
-    function addClearButtonToHeader() {
-        const header = document.querySelector('.bpc-chat-header .bpc-header-content');
-        if (header && !document.querySelector('.bpc-clear-chat-btn')) {
-            const clearBtn = document.createElement('button');
-            clearBtn.innerHTML = '🗑️';
-            clearBtn.className = 'bpc-clear-chat-btn';
-            clearBtn.title = 'Xóa lịch sử chat';
-            clearBtn.onclick = function(e) {
-                e.stopPropagation();
-                window.clearChatHistory();
-            };
-            header.appendChild(clearBtn);
-        }
-    }
-    
     // Khởi tạo floating button
     $(document).ready(function() {
-        // Xử lý floating button
-        $('.bpc-floating-button').on('click', function() {
+        // Kiểm tra xem có container floating không
+        const wrapper = $('.bpc-floating-wrapper');
+        if (wrapper.length === 0) {
+            // Nếu không có wrapper, tạo mới
             const container = $('.bpc-chatbot-container');
-            if (container.length === 0) {
-                location.reload();
+            if (container.length > 0) {
+                const newWrapper = $('<div class="bpc-floating-wrapper"></div>');
+                container.parent().append(newWrapper);
+                newWrapper.append(container);
+            }
+        }
+        
+        // Khôi phục trạng thái chat
+        const savedState = restoreChatState();
+        const container = document.querySelector('.bpc-chatbot-container');
+        if (container && savedState) {
+            if (!savedState.isOpen) {
+                container.classList.add('minimized');
             } else {
-                container.toggleClass('minimized');
-                if (!container.hasClass('minimized')) {
-                    container.find('.bpc-message-input').focus();
-                }
+                container.classList.remove('minimized');
+            }
+        }
+        
+        // Xử lý click trên container để toggle
+        $('.bpc-chatbot-container').on('click', function(e) {
+            // Chỉ toggle nếu đang ở trạng thái minimized
+            if ($(this).hasClass('minimized')) {
+                window.toggleChatbot(e);
             }
         });
         
-        // Auto-initialize cho tất cả chatbot containers
-        if ($('.bpc-chatbot-container').length) {
-            initChatbot();
+        // Tự động mở nếu có tin nhắn mới từ các trang khác
+        const hasNewMessage = localStorage.getItem('bpc_new_message');
+        if (hasNewMessage) {
+            localStorage.removeItem('bpc_new_message');
+            const container = document.querySelector('.bpc-chatbot-container');
+            if (container && container.classList.contains('minimized')) {
+                window.toggleChatbot();
+            }
         }
+        
+        // Lắng nghe sự kiện trước khi rời trang
+        window.addEventListener('beforeunload', function() {
+            // Lưu trạng thái chat
+            const container = document.querySelector('.bpc-chatbot-container');
+            if (container) {
+                const isMinimized = container.classList.contains('minimized');
+                saveChatState(!isMinimized);
+            }
+        });
         
         // Load chat history nếu có
         const history = localStorage.getItem('bpc_chat_history');
-        if (history && $('.bpc-chat-messages').children().length <= 1) {
+        const messagesContainer = document.getElementById('bpc-messages');
+        if (history && messagesContainer && messagesContainer.children.length <= 1) {
             const messages = JSON.parse(history);
-            const container = document.getElementById('bpc-messages');
-            if (container) {
-                messages.slice(-10).forEach(msg => {
-                    addMessage(msg.message, msg.sender, container);
+            if (messages && messages.length > 0) {
+                // Chỉ hiển thị tin nhắn từ session hiện tại
+                const recentMessages = messages.slice(-10);
+                recentMessages.forEach(msg => {
+                    addMessage(msg.message, msg.sender, messagesContainer);
                 });
             }
         }
         
-        // Thêm nút xóa vào header
-        setTimeout(addClearButtonToHeader, 100);
+        // Khởi tạo chatbot
+        if ($('.bpc-chatbot-container').length) {
+            initChatbot();
+        }
     });
     
     // Product support button
