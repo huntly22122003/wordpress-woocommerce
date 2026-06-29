@@ -36,3 +36,54 @@
 [29-Jun-2026 03:11:04 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
 [29-Jun-2026 03:11:06 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
 [29-Jun-2026 03:11:09 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:25:13 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:27:11 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/login-check-service/includes/class-db.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/login-check-service/login-check-service.php on line 24
+[29-Jun-2026 06:27:11 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/login-check-service/includes/class-db.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/login-check-service/login-check-service.php:24
+Stack trace:
+#0 /var/www/html/wp-settings.php(589): include_once()
+#1 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin-ajax.php(22): require_once('/var/www/html/w...')
+#4 {main}
+  thrown in /var/www/html/wp-content/plugins/login-check-service/login-check-service.php on line 24
+[29-Jun-2026 06:27:38 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/login-check-service/includes/class-db.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/login-check-service/login-check-service.php on line 24
+[29-Jun-2026 06:27:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/login-check-service/includes/class-db.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/login-check-service/login-check-service.php:24
+Stack trace:
+#0 /var/www/html/wp-settings.php(589): include_once()
+#1 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/plugins.php(10): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/login-check-service/login-check-service.php on line 24
+[29-Jun-2026 06:27:40 UTC] PHP Warning:  require_once(/var/www/html/wp-content/plugins/login-check-service/includes/class-db.php): Failed to open stream: No such file or directory in /var/www/html/wp-content/plugins/login-check-service/login-check-service.php on line 24
+[29-Jun-2026 06:27:40 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/var/www/html/wp-content/plugins/login-check-service/includes/class-db.php' (include_path='.:/usr/local/lib/php') in /var/www/html/wp-content/plugins/login-check-service/login-check-service.php:24
+Stack trace:
+#0 /var/www/html/wp-settings.php(589): include_once()
+#1 /var/www/html/wp-config.php(110): require_once('/var/www/html/w...')
+#2 /var/www/html/wp-load.php(50): require_once('/var/www/html/w...')
+#3 /var/www/html/wp-admin/admin.php(35): require_once('/var/www/html/w...')
+#4 /var/www/html/wp-admin/plugins.php(10): require_once('/var/www/html/w...')
+#5 {main}
+  thrown in /var/www/html/wp-content/plugins/login-check-service/login-check-service.php on line 24
+[29-Jun-2026 06:29:24 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:29:34 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:29:52 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:30:03 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:30:09 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:30:17 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:30:25 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:30:32 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:31:24 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:31:38 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:32:38 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:33:38 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:34:38 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:35:38 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:36:10 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:36:16 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:36:17 UTC] LoginLogger: logout logged via user for truongthangloi2003@gmail.com
+[29-Jun-2026 06:36:17 UTC] LoginLogger: logout called but no email found
+[29-Jun-2026 06:36:20 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:36:24 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
+[29-Jun-2026 06:36:26 UTC] Farm Fresh Chatbot: Widget class not found. Please check widget.php file.
