@@ -12,12 +12,20 @@ class LoginLogger {
             $sql = "CREATE TABLE IF NOT EXISTS login_check (
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 email VARCHAR(100) NOT NULL,
-                action VARCHAR(20) NOT NULL,
+                action VARCHAR(50) NOT NULL,
                 login_time DATETIME DEFAULT CURRENT_TIMESTAMP,
                 ip_address VARCHAR(45),
                 user_agent TEXT
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
             $this->db->exec($sql);
+
+            $check = $this->db->query("SHOW COLUMNS FROM login_check LIKE 'action'");
+            $col = $check->fetch(PDO::FETCH_ASSOC);
+            if ($col && strpos($col['Type'], 'varchar') !== false) {
+                if (preg_match('/varchar\((\d+)\)/', $col['Type'], $m) && intval($m[1]) < 50) {
+                    $this->db->exec("ALTER TABLE login_check MODIFY COLUMN action VARCHAR(50) NOT NULL");
+                }
+            }
         } catch (PDOException $e) {
             error_log('LoginLogger: Lỗi tạo bảng - ' . $e->getMessage());
         }
@@ -49,11 +57,15 @@ class LoginLogger {
         }
     }
 
-    // ===== HÀM MỚI CHO RESET PASSWORD =====
     public function log_reset_password_custom($email) {
         if (!empty($email)) {
             $this->insert_log($email, 'reset_password');
-            error_log("LoginLogger: reset_password logged for $email");
+        }
+    }
+
+    public function log_login_failed($email) {
+        if (!empty($email)) {
+            $this->insert_log($email, 'login_failed');
         }
     }
 

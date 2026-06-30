@@ -6,7 +6,9 @@ $login_error = sa_handle_login();
 $site_url = home_url('/');
 $register_url = home_url('/sa-register/');
 $forgot_url = home_url('/sa-forgot/');
+
 ?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -84,6 +86,16 @@ $forgot_url = home_url('/sa-forgot/');
                     </div>
                     
                     <form method="POST" action="" class="login-form">
+                        <!-- ===== THÊM ALERT TỪ SESSION VÀO ĐÂY ===== -->
+                        <?php if (isset($_SESSION['sa_error'])) : ?>
+                            <div class="message error" style="margin-bottom: 15px; padding: 12px; background: #fff3f3; border-left: 4px solid #dc3545; border-radius: 8px; display: flex; align-items: center; gap: 10px;">
+                                <i class="fas fa-exclamation-triangle" style="color: #dc3545;"></i>
+                                <span style="color: #721c24;"><?php echo esc_html($_SESSION['sa_error']); ?></span>
+                            </div>
+                            <?php unset($_SESSION['sa_error']); ?>
+                        <?php endif; ?>
+                        <!-- =========================================== -->
+                        
                         <div class="input-group">
                             <label><i class="fas fa-envelope"></i> Email</label>
                             <input type="email" name="email" placeholder="nongdan@nongsan.vn" required>
