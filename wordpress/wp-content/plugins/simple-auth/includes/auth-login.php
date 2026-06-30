@@ -47,14 +47,15 @@ function sa_handle_login()
     }
     
     if (file_exists(WP_PLUGIN_DIR . '/login-check-service/includes/class-rate-limiter.php')) {
-    require_once WP_PLUGIN_DIR . '/login-check-service/includes/class-rate-limiter.php';
-    $rate_limiter = new LoginRateLimiter();
-    $blocked_msg = $rate_limiter->is_blocked($email);
-    if ($blocked_msg) {
-        $_SESSION['sa_error'] = $blocked_msg;
-        wp_redirect(home_url('/sa-login'));
-        exit;
-    }
+        require_once WP_PLUGIN_DIR . '/login-check-service/includes/class-rate-limiter.php';
+        $rate_limiter = new LoginRateLimiter();
+        $blocked_msg = $rate_limiter->is_blocked($email);
+        if ($blocked_msg) {
+            $_SESSION['sa_error'] = $blocked_msg;
+            session_write_close(); // ← THÊM DÒNG NÀY
+            wp_redirect(home_url('/sa-login'));
+            exit;
+        }
     }
 
     $_SESSION['sa_user'] = [
