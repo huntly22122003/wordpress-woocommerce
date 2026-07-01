@@ -3,7 +3,7 @@ class LoginRateLimiter {
 
     private $db;
     private $max_attempts = 5;
-    private $block_duration = 1000; // 5 phút
+    private $block_duration = 100; // 5 phút
 
     public function __construct() {
         $this->db = LoginCheckDB::conn();

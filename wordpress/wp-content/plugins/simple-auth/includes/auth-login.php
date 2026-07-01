@@ -39,6 +39,18 @@ function sa_handle_login()
 
     error_log('User found ID: ' . $user['id']);
 
+    if (file_exists(WP_PLUGIN_DIR . '/login-check-service/includes/class-rate-limiter.php')) {
+    require_once WP_PLUGIN_DIR . '/login-check-service/includes/class-rate-limiter.php';
+    $rate_limiter = new LoginRateLimiter();
+    $blocked_msg = $rate_limiter->is_blocked($email);
+    if ($blocked_msg) {
+            $_SESSION['sa_error'] = $blocked_msg;
+            session_write_close(); // ← THÊM DÒNG NÀY
+            wp_redirect(home_url('/sa-login'));
+            exit;
+        }
+    }
+        
     if (!password_verify($password, $user['password'])) {
         do_action('sa_login_failed', $email);
         $_SESSION['sa_error'] = 'Wrong password';
@@ -46,17 +58,7 @@ function sa_handle_login()
         exit;   
     }
     
-    if (file_exists(WP_PLUGIN_DIR . '/login-check-service/includes/class-rate-limiter.php')) {
-        require_once WP_PLUGIN_DIR . '/login-check-service/includes/class-rate-limiter.php';
-        $rate_limiter = new LoginRateLimiter();
-        $blocked_msg = $rate_limiter->is_blocked($email);
-        if ($blocked_msg) {
-            $_SESSION['sa_error'] = $blocked_msg;
-            session_write_close(); // ← THÊM DÒNG NÀY
-            wp_redirect(home_url('/sa-login'));
-            exit;
-        }
-    }
+
 
     $_SESSION['sa_user'] = [
         'id' => $user['id'],
