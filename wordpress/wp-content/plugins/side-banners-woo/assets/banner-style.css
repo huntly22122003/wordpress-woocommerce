@@ -1,0 +1,252 @@
+/* ========================================
+   SIDE BANNERS FOR WOOCOMMERCE - STYLES
+   ======================================== */
+
+/* Wrapper chính */
+.sbw-banners-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 99998;
+}
+
+.sbw-banners-wrapper .sbw-banner {
+    pointer-events: auto;
+}
+
+/* ========== VỊ TRÍ ========== */
+/* Giữa màn hình */
+.sbw-position-middle .sbw-banner-left {
+    position: fixed;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sbw-position-middle .sbw-banner-right {
+    position: fixed;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Đầu trang */
+.sbw-position-top .sbw-banner-left {
+    position: fixed;
+    left: 15px;
+    top: 100px;
+}
+
+.sbw-position-top .sbw-banner-right {
+    position: fixed;
+    right: 15px;
+    top: 100px;
+}
+
+/* Cuối trang */
+.sbw-position-bottom .sbw-banner-left {
+    position: fixed;
+    left: 15px;
+    bottom: 20px;
+}
+
+.sbw-position-bottom .sbw-banner-right {
+    position: fixed;
+    right: 15px;
+    bottom: 20px;
+}
+
+/* ========== NỘI DUNG BANNER ========== */
+.sbw-banner-inner {
+    position: relative;
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.sbw-banner-inner:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.25);
+}
+
+.sbw-banner-inner a {
+    display: block;
+    line-height: 0;
+}
+
+.sbw-banner-inner img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* ========== NÚT ĐÓNG BANNER ========== */
+.sbw-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 28px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+    padding: 0;
+}
+
+.sbw-banner-inner:hover .sbw-close-btn {
+    opacity: 1;
+}
+
+.sbw-close-btn:hover {
+    background: rgba(220, 50, 50, 0.9);
+    transform: scale(1.1);
+}
+
+/* Khi banner bị ẩn */
+.sbw-banner.hidden {
+    display: none !important;
+}
+
+/* ========== ANIMATION ========== */
+.sbw-banner {
+    animation: sbwFadeIn 0.5s ease forwards;
+}
+
+@keyframes sbwFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+.sbw-position-top .sbw-banner {
+    animation: sbwSlideDown 0.5s ease forwards;
+}
+
+@keyframes sbwSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sbw-position-bottom .sbw-banner {
+    animation: sbwSlideUp 0.5s ease forwards;
+}
+
+@keyframes sbwSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+/* Ẩn trên tablet */
+@media (max-width: 1366px) {
+    .sbw-banner-inner img {
+        max-width: 120px !important;
+    }
+    .sbw-position-middle .sbw-banner-left,
+    .sbw-position-middle .sbw-banner-right {
+        left: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sbw-banner-inner img {
+        max-width: 100px !important;
+    }
+    .sbw-position-middle .sbw-banner-left,
+    .sbw-position-middle .sbw-banner-right {
+        left: 5px;
+        right: 5px;
+    }
+}
+
+/* Ẩn trên mobile */
+@media (max-width: 768px) {
+    .sbw-banners-wrapper {
+        display: none !important;
+    }
+}
+
+/* Hiển thị trên mobile (nếu bật) */
+@media (max-width: 768px) {
+    .sbw-banners-wrapper.mobile-show {
+        display: block !important;
+    }
+    
+    .sbw-banner-inner img {
+        max-width: 60px !important;
+    }
+    
+    .sbw-position-middle .sbw-banner-left {
+        left: 5px;
+    }
+    
+    .sbw-position-middle .sbw-banner-right {
+        right: 5px;
+    }
+}
+
+/* ========== TÙY CHỈNH THEO THEME ========== */
+/* Nếu bạn dùng theme tối màu */
+body.dark-theme .sbw-banner-inner {
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Nếu banner che nội dung, thêm padding cho site */
+.sbw-banners-wrapper ~ #page .site-content {
+    padding-left: 180px;
+    padding-right: 180px;
+    transition: padding 0.3s ease;
+}
+
+@media (max-width: 1366px) {
+    .sbw-banners-wrapper ~ #page .site-content {
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sbw-banners-wrapper ~ #page .site-content {
+        padding-left: 110px;
+        padding-right: 110px;
+    }
+}
+
+/* Khi banner bị ẩn */
+.sbw-banner.hidden ~ #page .site-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
